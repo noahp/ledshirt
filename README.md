@@ -7,6 +7,7 @@ BOM/Parts
 Mouser cart
 --------
 http://www.mouser.com/ProjectManager/ProjectDetail.aspx?AccessID=94f117391b
+(note- has wrong package of PIC, TSSOP-14 instead of SOIC-14)
 
 Charger
 --------
