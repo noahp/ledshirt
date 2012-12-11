@@ -35,8 +35,8 @@ rcvd - Mon, Dec 10, 2012
 
 PCB Images
 ========
-![front](https://raw.github.com/noahp/ledshirt/master/doc/front_image.png)
-![back](https://raw.github.com/noahp/ledshirt/master/doc/back_image.png)
+![front](https://raw.github.com/noahp/ledshirt/master/doc/front_image.jpg)
+![back](https://raw.github.com/noahp/ledshirt/master/doc/back_image.jpg)
 
 
 PCB Renders
