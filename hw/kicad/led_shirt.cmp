@@ -1,0 +1,234 @@
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 11/26/2012 8:18:44 AM
+
+BeginCmp
+TimeStamp = /509D016A;
+Reference = C1;
+ValeurCmp = 4.7µF;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /509D0292;
+Reference = C2;
+ValeurCmp = 4.7µF;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /509D01E7;
+Reference = D1;
+ValeurCmp = LED;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /509D007F;
+Reference = J1;
+ValeurCmp = 10103593-0001LF;
+IdModule  = 10118193-0001LF;
+EndCmp
+
+BeginCmp
+TimeStamp = /509D160E;
+Reference = P1;
+ValeurCmp = icpc;
+IdModule  = noah_hole_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /509D160C;
+Reference = P2;
+ValeurCmp = icpd;
+IdModule  = noah_hole_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /509D160A;
+Reference = P3;
+ValeurCmp = gnd;
+IdModule  = noah_hole_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /509D15FE;
+Reference = P4;
+ValeurCmp = v+;
+IdModule  = noah_hole_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /509D15EE;
+Reference = P5;
+ValeurCmp = mclr;
+IdModule  = noah_hole_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /509D14B5;
+Reference = P6;
+ValeurCmp = bat+;
+IdModule  = noah_hole_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /509D14C3;
+Reference = P7;
+ValeurCmp = bat-;
+IdModule  = noah_hole_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /509ED371;
+Reference = P8;
+ValeurCmp = led1+;
+IdModule  = noah_hole_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /50A3E96A;
+Reference = P9;
+ValeurCmp = led1-;
+IdModule  = noah_hole_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /509ED36F;
+Reference = P10;
+ValeurCmp = led2+;
+IdModule  = noah_hole_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /50A3E96D;
+Reference = P11;
+ValeurCmp = led2-;
+IdModule  = noah_hole_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /509ED36D;
+Reference = P12;
+ValeurCmp = led3+;
+IdModule  = noah_hole_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /50A3E96F;
+Reference = P13;
+ValeurCmp = led3-;
+IdModule  = noah_hole_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /509ED365;
+Reference = P14;
+ValeurCmp = led4+;
+IdModule  = noah_hole_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /50A3E97E;
+Reference = P15;
+ValeurCmp = led4-;
+IdModule  = noah_hole_1;
+EndCmp
+
+BeginCmp
+TimeStamp = /50A55C00;
+Reference = Q1;
+ValeurCmp = MOS_N_np;
+IdModule  = SOT23;
+EndCmp
+
+BeginCmp
+TimeStamp = /50A55BF3;
+Reference = Q2;
+ValeurCmp = MOS_N_np;
+IdModule  = SOT23;
+EndCmp
+
+BeginCmp
+TimeStamp = /50A55C04;
+Reference = Q3;
+ValeurCmp = MOS_N_np;
+IdModule  = SOT23;
+EndCmp
+
+BeginCmp
+TimeStamp = /50A55C07;
+Reference = Q4;
+ValeurCmp = MOS_N_np;
+IdModule  = SOT23;
+EndCmp
+
+BeginCmp
+TimeStamp = /509D021A;
+Reference = R1;
+ValeurCmp = 3.3kΩ;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /509D0279;
+Reference = R2;
+ValeurCmp = 3.3kΩ;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /509FF0CA;
+Reference = R3;
+ValeurCmp = 10kΩ;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /509E9C0F;
+Reference = R4;
+ValeurCmp = 0Ω;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /509E9C13;
+Reference = R5;
+ValeurCmp = 0Ω;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /509E9C1D;
+Reference = R6;
+ValeurCmp = 0Ω;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /509E9C21;
+Reference = R7;
+ValeurCmp = 0Ω;
+IdModule  = SM0805;
+EndCmp
+
+BeginCmp
+TimeStamp = /509ED3DD;
+Reference = SW1;
+ValeurCmp = SW_PUSH;
+IdModule  = SW_PB_4PIN_SMT_real;
+EndCmp
+
+BeginCmp
+TimeStamp = /508746F6;
+Reference = U1;
+ValeurCmp = MCP73831;
+IdModule  = MCP73831;
+EndCmp
+
+BeginCmp
+TimeStamp = /5099CEA5;
+Reference = U2;
+ValeurCmp = PIC16F1503-I/ST;
+IdModule  = PIC16F1503-I/ST;
+EndCmp
+
+EndListe

@@ -1,0 +1,215 @@
+# EESchema Netlist Version 1.1 created  11/26/2012 8:18:44 AM
+(
+ ( /509D016A SM0805 C1 4.7µF
+  ( 1 vbus )
+  ( 2 GND )
+ )
+ ( /509D0292 SM0805 C2 4.7µF
+  ( 1 vbat )
+  ( 2 GND )
+ )
+ ( /509D01E7 SM0805 D1 LED
+  ( 1 vbus )
+  ( 2 N-000025 )
+ )
+ ( /509D007F 10118193-0001LF J1 10103593-0001LF
+  ( 1 vbus )
+  ( 2 ? )
+  ( 3 ? )
+  ( 4 ? )
+  ( 5 GND )
+  ( 6 GND )
+ )
+ ( /509D160E noah_hole_1 P1 icpc
+  ( 1 icspclk )
+ )
+ ( /509D160C noah_hole_1 P2 icpd
+  ( 1 icspdat )
+ )
+ ( /509D160A noah_hole_1 P3 gnd
+  ( 1 GND )
+ )
+ ( /509D15FE noah_hole_1 P4 v+
+  ( 1 vbat )
+ )
+ ( /509D15EE noah_hole_1 P5 mclr
+  ( 1 mclr )
+ )
+ ( /509D14B5 noah_hole_1 P6 bat+
+  ( 1 vbat )
+ )
+ ( /509D14C3 noah_hole_1 P7 bat-
+  ( 1 GND )
+ )
+ ( /509ED371 noah_hole_1 P8 led1+
+  ( 1 vbat )
+ )
+ ( /50A3E96A noah_hole_1 P9 led1-
+  ( 1 N-000005 )
+ )
+ ( /509ED36F noah_hole_1 P10 led2+
+  ( 1 vbat )
+ )
+ ( /50A3E96D noah_hole_1 P11 led2-
+  ( 1 N-000010 )
+ )
+ ( /509ED36D noah_hole_1 P12 led3+
+  ( 1 vbat )
+ )
+ ( /50A3E96F noah_hole_1 P13 led3-
+  ( 1 N-000008 )
+ )
+ ( /509ED365 noah_hole_1 P14 led4+
+  ( 1 vbat )
+ )
+ ( /50A3E97E noah_hole_1 P15 led4-
+  ( 1 N-000006 )
+ )
+ ( /50A55C00 SOT23 Q1 MOS_N_np
+  ( 1 N-000020 )
+  ( 2 GND )
+  ( 3 N-000024 )
+ )
+ ( /50A55BF3 SOT23 Q2 MOS_N_np
+  ( 1 N-000019 )
+  ( 2 GND )
+  ( 3 N-000004 )
+ )
+ ( /50A55C04 SOT23 Q3 MOS_N_np
+  ( 1 N-000028 )
+  ( 2 GND )
+  ( 3 N-000009 )
+ )
+ ( /50A55C07 SOT23 Q4 MOS_N_np
+  ( 1 N-000011 )
+  ( 2 GND )
+  ( 3 N-000007 )
+ )
+ ( /509D021A SM0805 R1 3.3kΩ
+  ( 1 N-000025 )
+  ( 2 N-000023 )
+ )
+ ( /509D0279 SM0805 R2 3.3kΩ
+  ( 1 N-000022 )
+  ( 2 GND )
+ )
+ ( /509FF0CA SM0805 R3 10kΩ
+  ( 1 vbat )
+  ( 2 N-000027 )
+ )
+ ( /509E9C0F SM0805 R4 0Ω
+  ( 1 N-000005 )
+  ( 2 N-000024 )
+ )
+ ( /509E9C13 SM0805 R5 0Ω
+  ( 1 N-000010 )
+  ( 2 N-000004 )
+ )
+ ( /509E9C1D SM0805 R6 0Ω
+  ( 1 N-000008 )
+  ( 2 N-000009 )
+ )
+ ( /509E9C21 SM0805 R7 0Ω
+  ( 1 N-000006 )
+  ( 2 N-000007 )
+ )
+ ( /509ED3DD SW_PB_4PIN_SMT_real SW1 SW_PUSH
+  ( 1 GND )
+  ( 2 N-000027 )
+ )
+ ( /508746F6 MCP73831 U1 MCP73831
+  ( 1 N-000023 )
+  ( 2 GND )
+  ( 3 vbat )
+  ( 4 vbus )
+  ( 5 N-000022 )
+ )
+ ( /5099CEA5 PIC16F1503-I/ST U2 PIC16F1503-I/ST
+  ( 1 vbat )
+  ( 2 N-000027 )
+  ( 3 ? )
+  ( 4 mclr )
+  ( 5 ? )
+  ( 6 ? )
+  ( 7 ? )
+  ( 8 N-000011 )
+  ( 9 N-000028 )
+  ( 10 N-000019 )
+  ( 11 N-000020 )
+  ( 12 icspclk )
+  ( 13 icspdat )
+  ( 14 GND )
+ )
+)
+*
+{ Allowed footprints by component:
+$component C1
+ SM*
+ C?
+ C1-1
+$endlist
+$component C2
+ SM*
+ C?
+ C1-1
+$endlist
+$component D1
+ LED-3MM
+ LED-5MM
+ LED-10MM
+ LED-0603
+ LED-0805
+ LED-1206
+ LEDV
+$endlist
+$component R1
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R2
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R3
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R4
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R5
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R6
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$component R7
+ R?
+ SM0603
+ SM0805
+ R?-*
+ SM1206
+$endlist
+$endfootprintlist
+}
