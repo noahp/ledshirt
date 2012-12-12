@@ -27,6 +27,14 @@ http://www.cree.com/~/media/Files/Cree/LED%20Components%20and%20Modules/HB/Data%
 (Led aside- maybe best white led now- http://www.mouser.com/ProductDetail/Cree-Inc/XTEAWT-02-0000-00000BG53/?qs=sGAEpiMZZMu4Prknbu83y63Jd4vVyJmFFe2u%2fy%252bdJOU%3d )
 (Reference to similar design- https://github.com/rayshobby/squarewear/ )
 
+Build up
+========
+Charger working
+--------
+![charging](https://raw.github.com/noahp/ledshirt/master/doc/charging.jpg)
+
+PCB
+========
 PCB Timeline
 --------
 submitted - Thu, Nov 15, 2012 at 10:04 PM
@@ -35,13 +43,13 @@ fab - Fri, Nov 16, 2012 at 5:08 PM
 rcvd - Mon, Dec 10, 2012
 
 PCB Images
-========
+--------
 ![front](https://raw.github.com/noahp/ledshirt/master/doc/front_image.jpg)
 ![back](https://raw.github.com/noahp/ledshirt/master/doc/back_image.jpg)
 
 
 PCB Renders
-========
+--------
 ![big render](https://raw.github.com/noahp/ledshirt/master/doc/big.png)
 ![thumb render front](https://raw.github.com/noahp/ledshirt/master/doc/thumb_front.png)
 ![thumb render back](https://raw.github.com/noahp/ledshirt/master/doc/thumb_back.png)
