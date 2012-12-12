@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 11/26/2012 8:18:44 AM
+Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 12/11/2012 8:38:21 PM
 
 BeginCmp
 TimeStamp = /509D016A;
@@ -228,7 +228,7 @@ BeginCmp
 TimeStamp = /5099CEA5;
 Reference = U2;
 ValeurCmp = PIC16F1503-I/ST;
-IdModule  = PIC16F1503-I/ST;
+IdModule  = PIC16LF1503-I/SL;
 EndCmp
 
 EndListe

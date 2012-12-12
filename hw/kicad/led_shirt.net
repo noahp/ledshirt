@@ -1,4 +1,4 @@
-# EESchema Netlist Version 1.1 created  11/26/2012 8:18:44 AM
+# EESchema Netlist Version 1.1 created  12/11/2012 8:38:21 PM
 (
  ( /509D016A SM0805 C1 4.7µF
   ( 1 vbus )
@@ -124,7 +124,7 @@
   ( 4 vbus )
   ( 5 N-000022 )
  )
- ( /5099CEA5 PIC16F1503-I/ST U2 PIC16F1503-I/ST
+ ( /5099CEA5 PIC16LF1503-I/SL U2 PIC16F1503-I/ST
   ( 1 vbat )
   ( 2 N-000027 )
   ( 3 ? )
