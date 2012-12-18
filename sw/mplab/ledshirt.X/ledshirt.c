@@ -16,7 +16,6 @@
 
 #pragma config WDTE=OFF, MCLRE=ON, CP=OFF, FOSC=INTOSC
 
-
 //__CONFIG(FOSC_INTOSC & WDTE_OFF & PWRTE_OFF & MCLRE_ON & CP_OFF & BOREN_ON & CLKOUTEN_OFF);
 //__CONFIG(WRT_OFF & STVREN_ON & BORV_LO & LPBOR_OFF & LVP_ON);
 
@@ -43,56 +42,75 @@ void config_port(void)
     TRISC = 0b11111000;     // C0, C1, C2, output
 }
 
+//config timer
+void config_timer(void)
+{
+    // setup timer0 for 100ms
+    TMR0 = 0;
+    OPTION_REGbits.TMR0CS = 0;
+    OPTION_REGbits.PSA = 1;
+    //OPTION_REGbits.PS = 0b111;  // 1:256 scale
+}
+
 //config interrupts
 void config_interrupts(void)
 {
-    // enable external interrupts
-    INTCONbits.IOCIE = 1;
-    IOCANbits.IOCAN5 = 1;   // enable A5 negative interrupt
+    // enable timer interrupts
+    INTCONbits.TMR0IF = 0;
+    INTCONbits.TMR0IE = 1;
+    INTCONbits.GIE = 1;
 }
 
-#define NUM_MODES 2
-void main(int argc, char** argv) {
-    unsigned int running = 0;
+unsigned int blinkMode = 1;
 
+void interrupt Timer0_ISR(void)
+{
+    static unsigned char blinkStage = 0;
+    static unsigned int counter = 0;
+    if(INTCONbits.TMR0IF){
+        INTCONbits.TMR0IF = 0;
+
+        if(counter++ > 1000){
+            counter = 0;
+
+            switch(blinkMode){
+                default:
+                    blinkMode = 0;
+                case 0:
+                    LATAbits.LATA2 = 0;
+                    break;
+                case 1:
+                    if(blinkStage < 1){
+                        LATAbits.LATA2 = 1;
+                    }
+                    else{
+                        LATAbits.LATA2 = 0;
+                    }
+
+                    blinkStage = (blinkStage+1)%3;
+                    break;
+                case 2:
+                    LATAbits.LATA2 = 1;
+                    break;
+            }
+        }
+    }
+}
+
+#define NUM_MODES 3
+void main(int argc, char** argv) {
     // init
     config_clock();
     config_port();
+    config_timer();
     config_interrupts();
 
     while(1){
-        // check for button interrupt
-        if(IOCAFbits.IOCAF5){
-            // enable pos interrupt while we debounce
-            IOCAFbits.IOCAF5 = 0;
-            IOCAPbits.IOCAP5 = 1;
-            // wait some time and check the pin
-            __delay_ms(100);
-            if((!LATAbits.LATA5) && (!IOCAFbits.IOCAF5)){
-                running = (running+1)%NUM_MODES;
-            }
-
-            // clear the interrupt flag and disable pos int
-            IOCAPbits.IOCAP5 = 0;
-            IOCAFbits.IOCAF5 = 0;
-        }
-        //LATAbits.LATA2 = 1;
-        switch(running){
-            default:
-                running = 0;
-            case 0:
-                LATAbits.LATA2 = 0;
-                break;
-            case 1:
-                LATAbits.LATA2 = 1;
-                __delay_ms(100);
-                LATAbits.LATA2 = 0;
-                __delay_ms(200);
-                break;
-            case 2:
-                LATAbits.LATA2 = 1;
-                break;
-        }
-
+//        if(!LATAbits.LATA5){
+//            __delay_ms(20);
+//            if(!LATAbits.LATA5){
+//                blinkMode = (blinkMode+1)%2;
+//            }
+//        }
     }
 }
