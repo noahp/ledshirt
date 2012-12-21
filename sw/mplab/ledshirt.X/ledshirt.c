@@ -53,13 +53,29 @@ void config_timer(void)
     // we want to overflow after 250 instruction cycles to make math nicer
     TMR0bits.TMR0 = 5;
 
-    // setup timer1
+    /*// setup timer1
     TMR1 = 0;
     T1CONbits.TMR1CS = 0b01;    // fosc source
     T1CONbits.TMR1ON = 1;
     TMR1Hbits.TMR1H = 0xFF;     // load for 100kHz operation @ fosc = 16MHz
-    TMR1Lbits.TMR1L = 0x5F;
-    TMR0bits.TMR0 = 5;
+    TMR1Lbits.TMR1L = 0x5F;*/
+}
+
+//config pwm
+void config_pwm(void)
+{
+    // tmr2 config
+    T2CONbits.T2CKPS = 0b00;    //prescale is 1
+    PR2bits.PR2 = 39;           //39+1 for 100kHz operation
+    T2CONbits.TMR2ON = 1;       //tmr2 on
+
+    // pwm3 on A2
+    PWM3CONbits.PWM3POL = 0;    //active high
+    PWM3DCHbits.PWM3DCH = 0b00000100;    //load duty cycle of 16/(4*(pr2+1)) = 0.1, 10%
+    PWM3DCHbits.PWM3DCH = 0b00010100;    //load duty cycle of 80/(4*(pr2+1)) = 0.5, 50%
+    PWM3DCLbits.PWM3DCL = 0;
+    PWM3CONbits.PWM3EN = 1;     //turn it on
+    PWM3CONbits.PWM3OE = 1;     //output enable
 }
 
 //config interrupts
@@ -68,15 +84,52 @@ void config_interrupts(void)
     // enable timer interrupts
     INTCONbits.TMR0IF = 0;
     INTCONbits.TMR0IE = 1;
-    PIR1bits.TMR1IF = 0;
-    PIE1bits.TMR1IE = 1;
+    /*PIR1bits.TMR1IF = 0;
+    PIE1bits.TMR1IE = 1;*/
     INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
+    //INTCONbits.PEIE = 1;
+}
+
+void sleepy(void)
+{
+    //INTCONbits.PEIE = 0;
+    //PIE1bits.TMR1IE = 0;
+    //T1CONbits.TMR1ON = 0;
+    INTCONbits.TMR0IE = 0;
+    PWM3CONbits.PWM3OE = 0;     //output disable
+    PWM3CONbits.PWM3EN = 0;
+    T2CONbits.TMR2ON = 0;       //tmr2 off
+    LATAbits.LATA5 = 0;
+}
+
+void wakey(void)
+{
+    //PIE1bits.TMR1IE = 1;
+    //T1CONbits.TMR1ON = 1;
+    INTCONbits.TMR0IE = 1;
+    T2CONbits.TMR2ON = 1;       //tmr2 on
+    PWM3CONbits.PWM3EN = 1;
+}
+
+void enable_ext_interrupts(void)
+{
+    IOCAFbits.IOCAF5 = 0;
+    IOCANbits.IOCAN5 = 1;
+    INTCONbits.IOCIF = 0;
+    INTCONbits.IOCIE = 1;
+}
+
+void disable_ext_interrupts(void)
+{
+    INTCONbits.IOCIE = 1;
+    INTCONbits.IOCIF = 0;
+    IOCANbits.IOCAN5 = 1;
+    IOCAFbits.IOCAF5 = 0;
 }
 
 #define NUM_MODES 3
 unsigned int blinkMode = 0;
-
+unsigned int wakeUp = 0;
 char LED_ON = 0;
 
 void interrupt ISR(void)
@@ -86,18 +139,25 @@ void interrupt ISR(void)
     static unsigned int buttonPress = 0;
 #define BUTTONDEBOUNCE 320
 
-    if(PIR1bits.TMR1IF){
-        PIR1bits.TMR1IF = 0;
-        TMR1Hbits.TMR1H = 0xFF;     // load for 100kHz operation @ fosc = 16MHz
-        TMR1Lbits.TMR1L = 0x5F;
-
-        if(LED_ON){
-            LATAbits.LATA2 = !PORTAbits.RA2;
-        }
-        else{
-            LATAbits.LATA2 = 0;
-        }
+    if(IOCAFbits.IOCAF5){
+        IOCAFbits.IOCAF5 = 0;
+        disable_ext_interrupts();
+        wakeUp = 500;
+        wakey();
     }
+
+//    if(PIR1bits.TMR1IF){
+//        PIR1bits.TMR1IF = 0;
+//        TMR1Hbits.TMR1H = 0xFF;     // load for 100kHz operation @ fosc = 16MHz
+//        TMR1Lbits.TMR1L = 0x5F;
+//
+//        if(LED_ON){
+//            LATAbits.LATA2 = 1;//!PORTAbits.RA2;
+//        }
+//        else{
+//            LATAbits.LATA2 = 0;
+//        }
+//    }
     
     if(INTCONbits.TMR0IF){
         INTCONbits.TMR0IF = 0;
@@ -105,13 +165,26 @@ void interrupt ISR(void)
         // we want to overflow after 250 instruction cycles to make math nicer
         TMR0bits.TMR0 = 5;
 
-        // run leds based on mode here (every 100ms)
-        if(counter++ > 1000){
+        // control pwm here
+        if(LED_ON){
+            PWM3CONbits.PWM3OE = 1;     //output enable
+        }
+        else{
+            PWM3CONbits.PWM3OE = 0;     //output disable
+        }
+
+        // run mode managed here (every 10ms)
+        if(counter++ > 160){
             counter = 0;
+
+            // wakeUp timeout
+            if(wakeUp){
+                wakeUp--;
+            }
 
             // run button check here
             if(!PORTAbits.RA5){
-                if(buttonPress++ > 3){
+                if(buttonPress++ > 30){
                     buttonPress = 0;
                     blinkMode = (blinkMode + 1)%NUM_MODES;
                 }
@@ -127,14 +200,14 @@ void interrupt ISR(void)
                     LED_ON = 0;
                     break;
                 case 1:
-                    if(blinkStage < 1){
+                    if(blinkStage < 5){
                         LED_ON = 1;
                     }
                     else{
                         LED_ON = 0;
                     }
 
-                    blinkStage = (blinkStage+1)%3;
+                    blinkStage = (blinkStage+1)%10;
                     break;
                 case 2:
                     LED_ON = 1;
@@ -150,7 +223,15 @@ void main(int argc, char** argv) {
     config_port();
     config_timer();
     config_interrupts();
+    config_pwm();
 
     while(1){
+        // sleep when led is off, until ext interrupt wakes us up
+        if((blinkMode == 0) && (wakeUp == 0)){
+            // enable external interrupt on A5
+            enable_ext_interrupts();
+            sleepy();
+            asm("SLEEP");
+        }
     }
 }
