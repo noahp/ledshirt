@@ -76,6 +76,14 @@ void config_pwm(void)
     PWM3DCLbits.PWM3DCL = 0;
     PWM3CONbits.PWM3EN = 1;     //turn it on
     PWM3CONbits.PWM3OE = 1;     //output enable
+
+    // pwm4 on C1
+    PWM4CONbits.PWM4POL = 0;    //active high
+    PWM4DCHbits.PWM4DCH = 0b00000100;    //load duty cycle of 16/(4*(pr2+1)) = 0.1, 10%
+    PWM4DCHbits.PWM4DCH = 0b00010100;    //load duty cycle of 80/(4*(pr2+1)) = 0.5, 50%
+    PWM4DCLbits.PWM4DCL = 0;
+    PWM4CONbits.PWM4EN = 1;     //turn it on
+    PWM4CONbits.PWM4OE = 1;     //output enable
 }
 
 //config interrupts
@@ -98,6 +106,8 @@ void sleepy(void)
     INTCONbits.TMR0IE = 0;
     PWM3CONbits.PWM3OE = 0;     //output disable
     PWM3CONbits.PWM3EN = 0;
+    PWM4CONbits.PWM4OE = 0;     //output disable
+    PWM4CONbits.PWM4EN = 0;
     T2CONbits.TMR2ON = 0;       //tmr2 off
     LATAbits.LATA5 = 0;
 }
@@ -109,6 +119,7 @@ void wakey(void)
     INTCONbits.TMR0IE = 1;
     T2CONbits.TMR2ON = 1;       //tmr2 on
     PWM3CONbits.PWM3EN = 1;
+    PWM4CONbits.PWM4EN = 1;
 }
 
 void enable_ext_interrupts(void)
@@ -168,9 +179,11 @@ void interrupt ISR(void)
         // control pwm here
         if(LED_ON){
             PWM3CONbits.PWM3OE = 1;     //output enable
+            PWM4CONbits.PWM4OE = 1;
         }
         else{
             PWM3CONbits.PWM3OE = 0;     //output disable
+            PWM4CONbits.PWM4OE = 0;
         }
 
         // run mode managed here (every 10ms)
@@ -207,7 +220,7 @@ void interrupt ISR(void)
                         LED_ON = 0;
                     }
 
-                    blinkStage = (blinkStage+1)%10;
+                    blinkStage = (blinkStage+1)%15;
                     break;
                 case 2:
                     LED_ON = 1;
