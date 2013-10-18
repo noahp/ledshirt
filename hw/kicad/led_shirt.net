@@ -1,215 +1,282 @@
-# EESchema Netlist Version 1.1 created  12/11/2012 8:38:21 PM
-(
- ( /509D016A SM0805 C1 4.7µF
-  ( 1 vbus )
-  ( 2 GND )
- )
- ( /509D0292 SM0805 C2 4.7µF
-  ( 1 vbat )
-  ( 2 GND )
- )
- ( /509D01E7 SM0805 D1 LED
-  ( 1 vbus )
-  ( 2 N-000025 )
- )
- ( /509D007F 10118193-0001LF J1 10103593-0001LF
-  ( 1 vbus )
-  ( 2 ? )
-  ( 3 ? )
-  ( 4 ? )
-  ( 5 GND )
-  ( 6 GND )
- )
- ( /509D160E noah_hole_1 P1 icpc
-  ( 1 icspclk )
- )
- ( /509D160C noah_hole_1 P2 icpd
-  ( 1 icspdat )
- )
- ( /509D160A noah_hole_1 P3 gnd
-  ( 1 GND )
- )
- ( /509D15FE noah_hole_1 P4 v+
-  ( 1 vbat )
- )
- ( /509D15EE noah_hole_1 P5 mclr
-  ( 1 mclr )
- )
- ( /509D14B5 noah_hole_1 P6 bat+
-  ( 1 vbat )
- )
- ( /509D14C3 noah_hole_1 P7 bat-
-  ( 1 GND )
- )
- ( /509ED371 noah_hole_1 P8 led1+
-  ( 1 vbat )
- )
- ( /50A3E96A noah_hole_1 P9 led1-
-  ( 1 N-000005 )
- )
- ( /509ED36F noah_hole_1 P10 led2+
-  ( 1 vbat )
- )
- ( /50A3E96D noah_hole_1 P11 led2-
-  ( 1 N-000010 )
- )
- ( /509ED36D noah_hole_1 P12 led3+
-  ( 1 vbat )
- )
- ( /50A3E96F noah_hole_1 P13 led3-
-  ( 1 N-000008 )
- )
- ( /509ED365 noah_hole_1 P14 led4+
-  ( 1 vbat )
- )
- ( /50A3E97E noah_hole_1 P15 led4-
-  ( 1 N-000006 )
- )
- ( /50A55C00 SOT23 Q1 MOS_N_np
-  ( 1 N-000020 )
-  ( 2 GND )
-  ( 3 N-000024 )
- )
- ( /50A55BF3 SOT23 Q2 MOS_N_np
-  ( 1 N-000019 )
-  ( 2 GND )
-  ( 3 N-000004 )
- )
- ( /50A55C04 SOT23 Q3 MOS_N_np
-  ( 1 N-000028 )
-  ( 2 GND )
-  ( 3 N-000009 )
- )
- ( /50A55C07 SOT23 Q4 MOS_N_np
-  ( 1 N-000011 )
-  ( 2 GND )
-  ( 3 N-000007 )
- )
- ( /509D021A SM0805 R1 3.3kΩ
-  ( 1 N-000025 )
-  ( 2 N-000023 )
- )
- ( /509D0279 SM0805 R2 3.3kΩ
-  ( 1 N-000022 )
-  ( 2 GND )
- )
- ( /509FF0CA SM0805 R3 10kΩ
-  ( 1 vbat )
-  ( 2 N-000027 )
- )
- ( /509E9C0F SM0805 R4 0Ω
-  ( 1 N-000005 )
-  ( 2 N-000024 )
- )
- ( /509E9C13 SM0805 R5 0Ω
-  ( 1 N-000010 )
-  ( 2 N-000004 )
- )
- ( /509E9C1D SM0805 R6 0Ω
-  ( 1 N-000008 )
-  ( 2 N-000009 )
- )
- ( /509E9C21 SM0805 R7 0Ω
-  ( 1 N-000006 )
-  ( 2 N-000007 )
- )
- ( /509ED3DD SW_PB_4PIN_SMT_real SW1 SW_PUSH
-  ( 1 GND )
-  ( 2 N-000027 )
- )
- ( /508746F6 MCP73831 U1 MCP73831
-  ( 1 N-000023 )
-  ( 2 GND )
-  ( 3 vbat )
-  ( 4 vbus )
-  ( 5 N-000022 )
- )
- ( /5099CEA5 PIC16LF1503-I/SL U2 PIC16F1503-I/ST
-  ( 1 vbat )
-  ( 2 N-000027 )
-  ( 3 ? )
-  ( 4 mclr )
-  ( 5 ? )
-  ( 6 ? )
-  ( 7 ? )
-  ( 8 N-000011 )
-  ( 9 N-000028 )
-  ( 10 N-000019 )
-  ( 11 N-000020 )
-  ( 12 icspclk )
-  ( 13 icspdat )
-  ( 14 GND )
- )
-)
-*
-{ Allowed footprints by component:
-$component C1
- SM*
- C?
- C1-1
-$endlist
-$component C2
- SM*
- C?
- C1-1
-$endlist
-$component D1
- LED-3MM
- LED-5MM
- LED-10MM
- LED-0603
- LED-0805
- LED-1206
- LEDV
-$endlist
-$component R1
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R2
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R3
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R4
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R5
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R6
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$component R7
- R?
- SM0603
- SM0805
- R?-*
- SM1206
-$endlist
-$endfootprintlist
-}
+(export (version D)
+  (design
+    (source /home/noah/Documents/dev/ledshirt/hw/kicad/led_shirt.sch)
+    (date "Thu 17 Oct 2013 08:47:08 PM EDT")
+    (tool "eeschema (2013-mar-13)-testing"))
+  (components
+    (comp (ref Q1)
+      (value MOS_N_np)
+      (libsource (lib noah) (part MOS_N_np))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 50A55C00))
+    (comp (ref P8)
+      (value led1-)
+      (libsource (lib device) (part TST))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 50A3E96A))
+    (comp (ref R3)
+      (value 10kΩ)
+      (libsource (lib device) (part R))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 509FF0CA))
+    (comp (ref SW1)
+      (value SW_PUSH)
+      (libsource (lib device) (part SW_PUSH))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 509ED3DD))
+    (comp (ref P9)
+      (value led1+)
+      (libsource (lib device) (part TST))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 509ED371))
+    (comp (ref R4)
+      (value 0Ω)
+      (libsource (lib device) (part R))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 509E9C0F))
+    (comp (ref P1)
+      (value icpc)
+      (libsource (lib device) (part TST))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 509D160E))
+    (comp (ref P2)
+      (value icpd)
+      (libsource (lib device) (part TST))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 509D160C))
+    (comp (ref P3)
+      (value gnd)
+      (libsource (lib device) (part TST))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 509D160A))
+    (comp (ref P4)
+      (value v+)
+      (libsource (lib device) (part TST))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 509D15FE))
+    (comp (ref P5)
+      (value mclr)
+      (libsource (lib device) (part TST))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 509D15EE))
+    (comp (ref P7)
+      (value bat-)
+      (libsource (lib device) (part TST))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 509D14C3))
+    (comp (ref P6)
+      (value bat+)
+      (libsource (lib device) (part TST))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 509D14B5))
+    (comp (ref C2)
+      (value 4.7µF)
+      (libsource (lib device) (part C))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 509D0292))
+    (comp (ref R2)
+      (value 3.3kΩ)
+      (libsource (lib device) (part R))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 509D0279))
+    (comp (ref R1)
+      (value 3.3kΩ)
+      (libsource (lib device) (part R))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 509D021A))
+    (comp (ref D1)
+      (value LED)
+      (libsource (lib device) (part LED))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 509D01E7))
+    (comp (ref C1)
+      (value 4.7µF)
+      (libsource (lib device) (part C))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 509D016A))
+    (comp (ref J1)
+      (value 10103593-0001LF)
+      (libsource (lib extra) (part 10103593-0001LF))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 509D007F))
+    (comp (ref U1)
+      (value MCP73831)
+      (libsource (lib noah) (part MCP73831))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 508746F6))
+    (comp (ref U2)
+      (value PIC12F1822)
+      (libsource (lib noah) (part PIC12F1822))
+      (sheetpath (names /) (tstamps /))
+      (tstamp 52608131)))
+  (libparts
+    (libpart (lib device) (part C)
+      (description "Condensateur non polarise")
+      (footprints
+        (fp SM*)
+        (fp C?)
+        (fp C1-1))
+      (fields
+        (field (name Reference) C)
+        (field (name Value) C))
+      (pins
+        (pin (num 1) (name ~) (type passive))
+        (pin (num 2) (name ~) (type passive))))
+    (libpart (lib device) (part LED)
+      (footprints
+        (fp LED-3MM)
+        (fp LED-5MM)
+        (fp LED-10MM)
+        (fp LED-0603)
+        (fp LED-0805)
+        (fp LED-1206)
+        (fp LEDV))
+      (fields
+        (field (name Reference) D)
+        (field (name Value) LED))
+      (pins
+        (pin (num 1) (name A) (type passive))
+        (pin (num 2) (name K) (type passive))))
+    (libpart (lib device) (part R)
+      (description Resistance)
+      (footprints
+        (fp R?)
+        (fp SM0603)
+        (fp SM0805)
+        (fp R?-*)
+        (fp SM1206))
+      (fields
+        (field (name Reference) R)
+        (field (name Value) R))
+      (pins
+        (pin (num 1) (name ~) (type passive))
+        (pin (num 2) (name ~) (type passive))))
+    (libpart (lib device) (part SW_PUSH)
+      (description "Push Button")
+      (fields
+        (field (name Reference) SW)
+        (field (name Value) SW_PUSH))
+      (pins
+        (pin (num 1) (name 1) (type passive))
+        (pin (num 2) (name 2) (type passive))))
+    (libpart (lib device) (part TST)
+      (fields
+        (field (name Reference) P)
+        (field (name Value) TST))
+      (pins
+        (pin (num 1) (name ~) (type passive))))
+    (libpart (lib noah) (part MCP73831)
+      (fields
+        (field (name Reference) U)
+        (field (name Value) MCP73831))
+      (pins
+        (pin (num 1) (name stat) (type input))
+        (pin (num 2) (name vss) (type input))
+        (pin (num 3) (name vbat) (type input))
+        (pin (num 4) (name vdd) (type input))
+        (pin (num 5) (name prog) (type input))))
+    (libpart (lib extra) (part 10103593-0001LF)
+      (fields
+        (field (name Reference) J)
+        (field (name Value) 10103593-0001LF))
+      (pins
+        (pin (num 1) (name VBUS) (type input))
+        (pin (num 2) (name D-) (type input))
+        (pin (num 3) (name D+) (type input))
+        (pin (num 4) (name ID) (type input))
+        (pin (num 5) (name GND) (type input))
+        (pin (num 6) (name SHIELD) (type input))))
+    (libpart (lib noah) (part MOS_N_np)
+      (docs transistors/mos/*.*)
+      (fields
+        (field (name Reference) Q)
+        (field (name Value) MOS_N_np))
+      (pins
+        (pin (num 1) (name G) (type input))
+        (pin (num 2) (name S) (type passive))
+        (pin (num 3) (name D) (type passive))))
+    (libpart (lib noah) (part PIC12F1822)
+      (fields
+        (field (name Reference) U)
+        (field (name Value) PIC12F1822))
+      (pins
+        (pin (num 1) (name VDD) (type input))
+        (pin (num 2) (name RA5) (type input))
+        (pin (num 3) (name RA4) (type input))
+        (pin (num 4) (name RA3) (type input))
+        (pin (num 5) (name RA2) (type input))
+        (pin (num 6) (name RA1) (type input))
+        (pin (num 7) (name RA0) (type input))
+        (pin (num 8) (name VSS) (type input)))))
+  (libraries
+    (library (logical device)
+      (uri /usr/share/kicad/library/device.lib))
+    (library (logical noah)
+      (uri noah.lib))
+    (library (logical extra)
+      (uri extra.lib)))
+  (nets
+    (net (code 1) (name GND)
+      (node (ref C1) (pin 2))
+      (node (ref J1) (pin 6))
+      (node (ref U1) (pin 2))
+      (node (ref U2) (pin 8))
+      (node (ref SW1) (pin 1))
+      (node (ref Q1) (pin 2))
+      (node (ref J1) (pin 5))
+      (node (ref P7) (pin 1))
+      (node (ref C2) (pin 2))
+      (node (ref R2) (pin 2))
+      (node (ref P3) (pin 1)))
+    (net (code 2) (name "")
+      (node (ref U1) (pin 1))
+      (node (ref R1) (pin 2)))
+    (net (code 3) (name "")
+      (node (ref D1) (pin 2))
+      (node (ref R1) (pin 1)))
+    (net (code 4) (name icspclk)
+      (node (ref P1) (pin 1))
+      (node (ref U2) (pin 6)))
+    (net (code 5) (name icspdat)
+      (node (ref P2) (pin 1))
+      (node (ref U2) (pin 7)))
+    (net (code 6) (name mclr)
+      (node (ref U2) (pin 4))
+      (node (ref P5) (pin 1)))
+    (net (code 7) (name "")
+      (node (ref R2) (pin 1))
+      (node (ref U1) (pin 5)))
+    (net (code 8) (name vbat)
+      (node (ref R3) (pin 1))
+      (node (ref U1) (pin 3))
+      (node (ref P9) (pin 1))
+      (node (ref U2) (pin 1))
+      (node (ref P6) (pin 1))
+      (node (ref P4) (pin 1))
+      (node (ref C2) (pin 1)))
+    (net (code 9) (name "")
+      (node (ref U2) (pin 3)))
+    (net (code 10) (name "")
+      (node (ref Q1) (pin 1))
+      (node (ref U2) (pin 5)))
+    (net (code 11) (name "")
+      (node (ref J1) (pin 4)))
+    (net (code 12) (name "")
+      (node (ref J1) (pin 3)))
+    (net (code 13) (name "")
+      (node (ref J1) (pin 2)))
+    (net (code 14) (name vbus)
+      (node (ref D1) (pin 1))
+      (node (ref C1) (pin 1))
+      (node (ref U1) (pin 4))
+      (node (ref J1) (pin 1)))
+    (net (code 15) (name "")
+      (node (ref R3) (pin 2))
+      (node (ref SW1) (pin 2))
+      (node (ref U2) (pin 2)))
+    (net (code 16) (name "")
+      (node (ref R4) (pin 2))
+      (node (ref Q1) (pin 3)))
+    (net (code 17) (name "")
+      (node (ref R4) (pin 1))
+      (node (ref P8) (pin 1)))))
