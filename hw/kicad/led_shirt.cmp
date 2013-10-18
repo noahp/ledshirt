@@ -1,24 +1,24 @@
-Cmp-Mod V01 Created by CvPcb (2012-01-19 BZR 3256)-stable date = 12/11/2012 8:38:21 PM
+Cmp-Mod V01 Created by CvPcb (2013-mar-13)-testing date = Thu 17 Oct 2013 09:53:47 PM EDT
 
 BeginCmp
 TimeStamp = /509D016A;
 Reference = C1;
 ValeurCmp = 4.7µF;
-IdModule  = SM0805;
+IdModule  = SM0603;
 EndCmp
 
 BeginCmp
 TimeStamp = /509D0292;
 Reference = C2;
 ValeurCmp = 4.7µF;
-IdModule  = SM0805;
+IdModule  = SM0603;
 EndCmp
 
 BeginCmp
 TimeStamp = /509D01E7;
 Reference = D1;
 ValeurCmp = LED;
-IdModule  = SM0805;
+IdModule  = SM0603;
 EndCmp
 
 BeginCmp
@@ -32,35 +32,35 @@ BeginCmp
 TimeStamp = /509D160E;
 Reference = P1;
 ValeurCmp = icpc;
-IdModule  = noah_hole_1;
+IdModule  = test_pad_smd;
 EndCmp
 
 BeginCmp
 TimeStamp = /509D160C;
 Reference = P2;
 ValeurCmp = icpd;
-IdModule  = noah_hole_1;
+IdModule  = test_pad_smd;
 EndCmp
 
 BeginCmp
 TimeStamp = /509D160A;
 Reference = P3;
 ValeurCmp = gnd;
-IdModule  = noah_hole_1;
+IdModule  = test_pad_smd;
 EndCmp
 
 BeginCmp
 TimeStamp = /509D15FE;
 Reference = P4;
 ValeurCmp = v+;
-IdModule  = noah_hole_1;
+IdModule  = test_pad_smd;
 EndCmp
 
 BeginCmp
 TimeStamp = /509D15EE;
 Reference = P5;
 ValeurCmp = mclr;
-IdModule  = noah_hole_1;
+IdModule  = test_pad_smd;
 EndCmp
 
 BeginCmp
@@ -78,58 +78,16 @@ IdModule  = noah_hole_1;
 EndCmp
 
 BeginCmp
-TimeStamp = /509ED371;
-Reference = P8;
-ValeurCmp = led1+;
-IdModule  = noah_hole_1;
-EndCmp
-
-BeginCmp
 TimeStamp = /50A3E96A;
-Reference = P9;
+Reference = P8;
 ValeurCmp = led1-;
 IdModule  = noah_hole_1;
 EndCmp
 
 BeginCmp
-TimeStamp = /509ED36F;
-Reference = P10;
-ValeurCmp = led2+;
-IdModule  = noah_hole_1;
-EndCmp
-
-BeginCmp
-TimeStamp = /50A3E96D;
-Reference = P11;
-ValeurCmp = led2-;
-IdModule  = noah_hole_1;
-EndCmp
-
-BeginCmp
-TimeStamp = /509ED36D;
-Reference = P12;
-ValeurCmp = led3+;
-IdModule  = noah_hole_1;
-EndCmp
-
-BeginCmp
-TimeStamp = /50A3E96F;
-Reference = P13;
-ValeurCmp = led3-;
-IdModule  = noah_hole_1;
-EndCmp
-
-BeginCmp
-TimeStamp = /509ED365;
-Reference = P14;
-ValeurCmp = led4+;
-IdModule  = noah_hole_1;
-EndCmp
-
-BeginCmp
-TimeStamp = /50A3E97E;
-Reference = P15;
-ValeurCmp = led4-;
+TimeStamp = /509ED371;
+Reference = P9;
+ValeurCmp = led1+;
 IdModule  = noah_hole_1;
 EndCmp
 
@@ -141,73 +99,31 @@ IdModule  = SOT23;
 EndCmp
 
 BeginCmp
-TimeStamp = /50A55BF3;
-Reference = Q2;
-ValeurCmp = MOS_N_np;
-IdModule  = SOT23;
-EndCmp
-
-BeginCmp
-TimeStamp = /50A55C04;
-Reference = Q3;
-ValeurCmp = MOS_N_np;
-IdModule  = SOT23;
-EndCmp
-
-BeginCmp
-TimeStamp = /50A55C07;
-Reference = Q4;
-ValeurCmp = MOS_N_np;
-IdModule  = SOT23;
-EndCmp
-
-BeginCmp
 TimeStamp = /509D021A;
 Reference = R1;
 ValeurCmp = 3.3kΩ;
-IdModule  = SM0805;
+IdModule  = SM0603;
 EndCmp
 
 BeginCmp
 TimeStamp = /509D0279;
 Reference = R2;
 ValeurCmp = 3.3kΩ;
-IdModule  = SM0805;
+IdModule  = SM0603;
 EndCmp
 
 BeginCmp
 TimeStamp = /509FF0CA;
 Reference = R3;
 ValeurCmp = 10kΩ;
-IdModule  = SM0805;
+IdModule  = SM0603;
 EndCmp
 
 BeginCmp
 TimeStamp = /509E9C0F;
 Reference = R4;
 ValeurCmp = 0Ω;
-IdModule  = SM0805;
-EndCmp
-
-BeginCmp
-TimeStamp = /509E9C13;
-Reference = R5;
-ValeurCmp = 0Ω;
-IdModule  = SM0805;
-EndCmp
-
-BeginCmp
-TimeStamp = /509E9C1D;
-Reference = R6;
-ValeurCmp = 0Ω;
-IdModule  = SM0805;
-EndCmp
-
-BeginCmp
-TimeStamp = /509E9C21;
-Reference = R7;
-ValeurCmp = 0Ω;
-IdModule  = SM0805;
+IdModule  = SM0603;
 EndCmp
 
 BeginCmp
@@ -225,10 +141,10 @@ IdModule  = MCP73831;
 EndCmp
 
 BeginCmp
-TimeStamp = /5099CEA5;
+TimeStamp = /52608131;
 Reference = U2;
-ValeurCmp = PIC16F1503-I/ST;
-IdModule  = PIC16LF1503-I/SL;
+ValeurCmp = PIC12F1822;
+IdModule  = PIC12F1822-SOIC-8;
 EndCmp
 
 EndListe
