@@ -16,8 +16,10 @@ http://www.microchip.com/wwwproducts/Devices.aspx?dDocName=en024903
 
 Micro
 --------
-http://ww1.microchip.com/downloads/en/DeviceDoc/41607A.pdf
-http://www.digikey.com/product-detail/en/PIC16LF1503-I%2FSL/PIC16LF1503-I%2FSL-ND/2772045
+pic12f1822  
+http://www.microchip.com/wwwproducts/Devices.aspx?dDocName=en544839  
+http://ww1.microchip.com/downloads/en/DeviceDoc/41607A.pdf  
+http://www.digikey.com/product-detail/en/PIC16LF1503-I%2FSL/PIC16LF1503-I%2FSL-ND/2772045  
 
 LEDs
 --------
