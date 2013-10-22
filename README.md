@@ -6,12 +6,12 @@ BOM/Parts
 ========
 Mouser cart
 --------
-http://www.mouser.com/ProjectManager/ProjectDetail.aspx?AccessID=94f117391b
+http://www.mouser.com/ProjectManager/ProjectDetail.aspx?AccessID=94f117391b  
 (note- has wrong package of PIC, TSSOP-14 instead of SOIC-14)
 
 Charger
 --------
-http://ww1.microchip.com/downloads/en/DeviceDoc/21984e.pdf
+http://ww1.microchip.com/downloads/en/DeviceDoc/21984e.pdf  
 http://www.microchip.com/wwwproducts/Devices.aspx?dDocName=en024903
 
 Micro
@@ -23,8 +23,7 @@ http://www.digikey.com/product-detail/en/PIC16LF1503-I%2FSL/PIC16LF1503-I%2FSL-N
 
 LEDs
 --------
-http://www.mouser.com/ProductDetail/Cree-Inc/CLM1B-GKW-CVBXA793/?qs=sGAEpiMZZMtEjy7lsqBi5ToqnPlMkcj3Zy1CzGT4WHw%3d
-http://www.cree.com/~/media/Files/Cree/LED%20Components%20and%20Modules/HB/Data%20Sheets/CLM1BBKWGKW994.pdf
+http://www.mouser.com/ProductDetail/Cree-Inc/CLM1B-GKW-CVBXA793/?qs=sGAEpiMZZMtEjy7lsqBi5ToqnPlMkcj3Zy1CzGT4WHw%3d  
+http://www.cree.com/~/media/Files/Cree/LED%20Components%20and%20Modules/HB/Data%20Sheets/CLM1BBKWGKW994.pdf  
 
-(Led aside- maybe best white led now- http://www.mouser.com/ProductDetail/Cree-Inc/XTEAWT-02-0000-00000BG53/?qs=sGAEpiMZZMu4Prknbu83y63Jd4vVyJmFFe2u%2fy%252bdJOU%3d )
 (Reference to similar design- https://github.com/rayshobby/squarewear/ )
