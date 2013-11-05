@@ -38,7 +38,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "23 oct 2013"
+Date "5 nov 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -46,7 +46,7 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text GLabel 8750 2700 3    60   Input ~ 0
+Text GLabel 8500 2050 0    60   Input ~ 0
 vbat
 $Comp
 L MOS_N_np Q1
@@ -57,17 +57,6 @@ F 1 "MOS_N_np" H 8510 3500 60  0000 R CNN
 F 2 "" H 8500 3650 60  0001 C CNN
 F 3 "" H 8500 3650 60  0001 C CNN
 	1    8500 3650
-	1    0    0    -1  
-$EndComp
-$Comp
-L TST P8
-U 1 1 50A3E96A
-P 8600 2550
-F 0 "P8" H 8600 2850 40  0000 C CNN
-F 1 "led1-" H 8600 2800 30  0000 C CNN
-F 2 "" H 8600 2550 60  0001 C CNN
-F 3 "" H 8600 2550 60  0001 C CNN
-	1    8600 2550
 	1    0    0    -1  
 $EndComp
 Text GLabel 5450 1900 0    60   Input ~ 0
@@ -103,17 +92,6 @@ F 1 "SW_PUSH" H 5050 2570 50  0000 C CNN
 F 2 "" H 5050 2650 60  0001 C CNN
 F 3 "" H 5050 2650 60  0001 C CNN
 	1    5050 2650
-	1    0    0    -1  
-$EndComp
-$Comp
-L TST P9
-U 1 1 509ED371
-P 8750 2600
-F 0 "P9" H 8750 2900 40  0000 C CNN
-F 1 "led1+" H 8750 2850 30  0000 C CNN
-F 2 "" H 8750 2600 60  0001 C CNN
-F 3 "" H 8750 2600 60  0001 C CNN
-	1    8750 2600
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -421,8 +399,6 @@ F 3 "~" H 7700 4000 30  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8750 2600 8750 2700
-Wire Wire Line
 	5450 1900 5450 2050
 Wire Wire Line
 	4750 2650 4650 2650
@@ -544,4 +520,60 @@ Wire Wire Line
 Wire Wire Line
 	8600 4400 8600 3850
 Connection ~ 8150 4400
+$Comp
+L LED D2
+U 1 1 52798086
+P 8600 2350
+F 0 "D2" H 8600 2450 50  0000 C CNN
+F 1 "LED" H 8600 2250 50  0000 C CNN
+F 2 "" H 8600 2350 60  0001 C CNN
+F 3 "" H 8600 2350 60  0001 C CNN
+	1    8600 2350
+	0    1    1    0   
+$EndComp
+$Comp
+L LED D3
+U 1 1 5279808E
+P 8900 2350
+F 0 "D3" H 8900 2450 50  0000 C CNN
+F 1 "LED" H 8900 2250 50  0000 C CNN
+F 2 "" H 8900 2350 60  0001 C CNN
+F 3 "" H 8900 2350 60  0001 C CNN
+	1    8900 2350
+	0    1    1    0   
+$EndComp
+$Comp
+L LED D4
+U 1 1 52798094
+P 9200 2350
+F 0 "D4" H 9200 2450 50  0000 C CNN
+F 1 "LED" H 9200 2250 50  0000 C CNN
+F 2 "" H 9200 2350 60  0001 C CNN
+F 3 "" H 9200 2350 60  0001 C CNN
+	1    9200 2350
+	0    1    1    0   
+$EndComp
+$Comp
+L LED D5
+U 1 1 5279809A
+P 9500 2350
+F 0 "D5" H 9500 2450 50  0000 C CNN
+F 1 "LED" H 9500 2250 50  0000 C CNN
+F 2 "" H 9500 2350 60  0001 C CNN
+F 3 "" H 9500 2350 60  0001 C CNN
+	1    9500 2350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8500 2050 8600 2050
+Wire Wire Line
+	8600 2050 8600 2150
+Wire Wire Line
+	8600 2150 9500 2150
+Connection ~ 8900 2150
+Connection ~ 9200 2150
+Wire Wire Line
+	8600 2550 9500 2550
+Connection ~ 9200 2550
+Connection ~ 8900 2550
 $EndSCHEMATC
