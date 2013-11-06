@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 10/23/2013 11:32:26 AM
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 11/5/2013 7:00:03 PM
 
 BeginCmp
 TimeStamp = /509D016A;
@@ -19,6 +19,34 @@ TimeStamp = /509D01E7;
 Reference = D1;
 ValeurCmp = LED;
 IdModule  = SM0603;
+EndCmp
+
+BeginCmp
+TimeStamp = /52798086;
+Reference = D2;
+ValeurCmp = LED;
+IdModule  = plcc2;
+EndCmp
+
+BeginCmp
+TimeStamp = /5279808E;
+Reference = D3;
+ValeurCmp = LED;
+IdModule  = plcc2;
+EndCmp
+
+BeginCmp
+TimeStamp = /52798094;
+Reference = D4;
+ValeurCmp = LED;
+IdModule  = plcc2;
+EndCmp
+
+BeginCmp
+TimeStamp = /5279809A;
+Reference = D5;
+ValeurCmp = LED;
+IdModule  = plcc2;
 EndCmp
 
 BeginCmp
@@ -74,20 +102,6 @@ BeginCmp
 TimeStamp = /509D14C3;
 Reference = P7;
 ValeurCmp = bat-;
-IdModule  = noah_hole_1;
-EndCmp
-
-BeginCmp
-TimeStamp = /50A3E96A;
-Reference = P8;
-ValeurCmp = led1-;
-IdModule  = noah_hole_1;
-EndCmp
-
-BeginCmp
-TimeStamp = /509ED371;
-Reference = P9;
-ValeurCmp = led1+;
 IdModule  = noah_hole_1;
 EndCmp
 
