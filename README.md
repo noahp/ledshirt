@@ -19,7 +19,7 @@ LEDs
 http://www.mouser.com/ProductDetail/Cree-Inc/CLM1B-GKW-CVBXA793/?qs=sGAEpiMZZMtEjy7lsqBi5ToqnPlMkcj3Zy1CzGT4WHw%3d  
 http://www.cree.com/~/media/Files/Cree/LED%20Components%20and%20Modules/HB/Data%20Sheets/CLM1BBKWGKW994.pdf  
 
-Switch
+FET
 -----
 Vishay SI2302CDS-T1-E3  
 http://www.mouser.com/ProductDetail/Vishay-Siliconix/SI2302CDS-T1-E3/?qs=sGAEpiMZZMshyDBzk1%2fWixV8WKf1AQUVJTjEt414B%252b8%3d  
