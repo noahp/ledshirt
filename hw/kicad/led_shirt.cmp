@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 11/7/2013 6:42:38 PM
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 11/7/2013 7:00:15 PM
 
 BeginCmp
 TimeStamp = /509D016A;
@@ -59,14 +59,14 @@ EndCmp
 BeginCmp
 TimeStamp = /509D14B5;
 Reference = P6;
-ValeurCmp = bat+;
+ValeurCmp = b+;
 IdModule  = noah_hole_1;
 EndCmp
 
 BeginCmp
 TimeStamp = /509D14C3;
 Reference = P7;
-ValeurCmp = bat-;
+ValeurCmp = b-;
 IdModule  = noah_hole_1;
 EndCmp
 
