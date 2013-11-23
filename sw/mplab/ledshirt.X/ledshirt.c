@@ -4,28 +4,34 @@
  * https://github.com/noahp/ledshirt.git
  */
 
-#include <stdlib.h>
-#include <stdint.h>
+// PIC12F1822 Configuration Bit Settings
+
 #include <xc.h>
 
-#ifndef _XTAL_FREQ
-#define _XTAL_FREQ  16000000
-#endif
+// #pragma config statements should precede project file includes.
+// Use project enums instead of #define for ON and OFF.
 
-// PIC16F1503 Configuration Bit Settings
+// CONFIG1
+#pragma config FOSC = INTOSC    // Oscillator Selection (INTOSC oscillator: I/O function on CLKIN pin)
+#pragma config WDTE = OFF       // Watchdog Timer Enable (WDT disabled)
+#pragma config PWRTE = OFF      // Power-up Timer Enable (PWRT disabled)
+#pragma config MCLRE = ON       // MCLR Pin Function Select (MCLR/VPP pin function is MCLR)
+#pragma config CP = OFF         // Flash Program Memory Code Protection (Program memory code protection is disabled)
+#pragma config CPD = OFF        // Data Memory Code Protection (Data memory code protection is disabled)
+#pragma config BOREN = ON       // Brown-out Reset Enable (Brown-out Reset enabled)
+#pragma config CLKOUTEN = OFF   // Clock Out Enable (CLKOUT function is disabled. I/O or oscillator function on the CLKOUT pin)
+#pragma config IESO = ON        // Internal/External Switchover (Internal/External Switchover mode is enabled)
+#pragma config FCMEN = ON       // Fail-Safe Clock Monitor Enable (Fail-Safe Clock Monitor is enabled)
 
-#pragma config WDTE=OFF, MCLRE=ON, CP=OFF, FOSC=INTOSC
+// CONFIG2
+#pragma config WRT = OFF        // Flash Memory Self-Write Protection (Write protection off)
+#pragma config PLLEN = ON       // PLL Enable (4x PLL enabled)
+#pragma config STVREN = ON      // Stack Overflow/Underflow Reset Enable (Stack Overflow or Underflow will cause a Reset)
+#pragma config BORV = LO        // Brown-out Reset Voltage Selection (Brown-out Reset Voltage (Vbor), low trip point selected.)
+#pragma config LVP = ON         // Low-Voltage Programming Enable (Low-voltage programming enabled)
 
-//__CONFIG(FOSC_INTOSC & WDTE_OFF & PWRTE_OFF & MCLRE_ON & CP_OFF & BOREN_ON & CLKOUTEN_OFF);
-//__CONFIG(WRT_OFF & STVREN_ON & BORV_LO & LPBOR_OFF & LVP_ON);
-
-
-//config clock
-void config_clock(void)
-{
-    OSCCONbits.IRCF = 0b1111;   // HF internal osc @ 16MHz
-    //OSCCONbits.SCS = 0b11;      // internal osc block
-}
+#include <stdlib.h>
+#include <stdint.h>
 
 //config port pins
 void config_port(void)
@@ -34,24 +40,24 @@ void config_port(void)
     PORTA = 0;
     LATA = 0;
     ANSELA = 0;
-    TRISA = 0b11111011;     // A2, output, A5, input
-
+    TRISA = 0b11111111;     // A5, input
+/*
     // portc
     PORTC = 0;
     LATC = 0;
-    TRISC = 0b11111000;     // C0, C1, C2, output
+    TRISC = 0b11111000;     // C0, C1, C2, output*/
 }
 
 //config timer
 void config_timer(void)
-{
+{/*
     // setup timer0
     TMR0 = 0;
     OPTION_REGbits.TMR0CS = 0;
     OPTION_REGbits.PSA = 1;
     //OPTION_REGbits.PS = 0b111;  // 1:256 scale
     // we want to overflow after 250 instruction cycles to make math nicer
-    TMR0bits.TMR0 = 5;
+    TMR0bits.TMR0 = 5;*/
 
     /*// setup timer1
     TMR1 = 0;
@@ -63,7 +69,7 @@ void config_timer(void)
 
 //config pwm
 void config_pwm(void)
-{
+{/*
     // tmr2 config
     T2CONbits.T2CKPS = 0b00;    //prescale is 1
     PR2bits.PR2 = 39;           //39+1 for 100kHz operation
@@ -83,12 +89,12 @@ void config_pwm(void)
     PWM4DCHbits.PWM4DCH = 0b00010100;    //load duty cycle of 80/(4*(pr2+1)) = 0.5, 50%
     PWM4DCLbits.PWM4DCL = 0;
     PWM4CONbits.PWM4EN = 1;     //turn it on
-    PWM4CONbits.PWM4OE = 1;     //output enable
+    PWM4CONbits.PWM4OE = 1;     //output enable*/
 }
 
 //config interrupts
 void config_interrupts(void)
-{
+{/*
     // enable timer interrupts
     INTCONbits.TMR0IF = 0;
     INTCONbits.TMR0IE = 1;
@@ -99,7 +105,7 @@ void config_interrupts(void)
 }
 
 void sleepy(void)
-{
+{/*
     //INTCONbits.PEIE = 0;
     //PIE1bits.TMR1IE = 0;
     //T1CONbits.TMR1ON = 0;
@@ -108,18 +114,18 @@ void sleepy(void)
     PWM3CONbits.PWM3EN = 0;
     PWM4CONbits.PWM4OE = 0;     //output disable
     PWM4CONbits.PWM4EN = 0;
-    T2CONbits.TMR2ON = 0;       //tmr2 off
+    T2CONbits.TMR2ON = 0;       //tmr2 off*/
     LATAbits.LATA5 = 0;
 }
 
 void wakey(void)
-{
+{/*
     //PIE1bits.TMR1IE = 1;
     //T1CONbits.TMR1ON = 1;
     INTCONbits.TMR0IE = 1;
     T2CONbits.TMR2ON = 1;       //tmr2 on
     PWM3CONbits.PWM3EN = 1;
-    PWM4CONbits.PWM4EN = 1;
+    PWM4CONbits.PWM4EN = 1;*/
 }
 
 void enable_ext_interrupts(void)
@@ -157,6 +163,8 @@ void interrupt ISR(void)
         wakey();
     }
 
+    while(1);
+
 //    if(PIR1bits.TMR1IF){
 //        PIR1bits.TMR1IF = 0;
 //        TMR1Hbits.TMR1H = 0xFF;     // load for 100kHz operation @ fosc = 16MHz
@@ -170,7 +178,7 @@ void interrupt ISR(void)
 //        }
 //    }
     
-    if(INTCONbits.TMR0IF){
+    /*if(INTCONbits.TMR0IF){
         INTCONbits.TMR0IF = 0;
 
         // we want to overflow after 250 instruction cycles to make math nicer
@@ -227,16 +235,20 @@ void interrupt ISR(void)
                     break;
             }
         }
-    }
+    }*/
 }
 
 void main(int argc, char** argv) {
     // init
-    config_clock();
     config_port();
     config_timer();
     config_interrupts();
     config_pwm();
+
+    enable_ext_interrupts();
+    sleepy();
+
+    while(1);
 
     while(1){
         // sleep when led is off, until ext interrupt wakes us up
