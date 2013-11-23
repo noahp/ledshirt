@@ -51,6 +51,9 @@ void config_port(void)
     LATA = 0;
     ANSELA = 0;
     TRISA = 0b11111011;     // A5 input, A2 output
+
+    // pwm P1A on pin A2
+    APFCONbits.CCP1SEL = 0;
 }
 
 //config timer
@@ -67,19 +70,17 @@ void config_timer(void)
 
 //config pwm
 void config_pwm(void)
-{/*
+{
     // tmr2 config
     T2CONbits.T2CKPS = 0b00;    //prescale is 1
     PR2bits.PR2 = 39;           //39+1 for 100kHz operation
     T2CONbits.TMR2ON = 1;       //tmr2 on
 
-    // pwm3 on A2
-    PWM3CONbits.PWM3POL = 0;    //active high
-    PWM3DCHbits.PWM3DCH = 0b00000100;    //load duty cycle of 16/(4*(pr2+1)) = 0.1, 10%
-    PWM3DCHbits.PWM3DCH = 0b00010100;    //load duty cycle of 80/(4*(pr2+1)) = 0.5, 50%
-    PWM3DCLbits.PWM3DCL = 0;
-    PWM3CONbits.PWM3EN = 1;     //turn it on
-    PWM3CONbits.PWM3OE = 1;     //output enable*/
+    // pwm1A on A2
+    CCP1CONbits.CCP1M = 0b1100; //PWM mode: P1A, P1C active-high
+    CCP1CONbits.P1M = 0b00;     //00 = Single output; P1A modulated
+    CCPR1Lbits.CCPR1L = 0b00000111; //pwm duty cycle msb's
+    CCP1CONbits.DC1B = 0b11;    //pwm duty cycle lsb's
 }
 
 //config interrupts
@@ -95,8 +96,7 @@ void sleepy(void)
 {
     INTCONbits.TMR0IF = 0;
     INTCONbits.TMR0IE = 0;
-    /*PWM3CONbits.PWM3OE = 0;     //output disable
-    PWM3CONbits.PWM3EN = 0;*/
+    TRISAbits.TRISA2 = 1;       //pwm output disable
     T2CONbits.TMR2ON = 0;       //tmr2 off
     LATAbits.LATA5 = 0;
 }
@@ -105,7 +105,6 @@ void wakey(void)
 {
     INTCONbits.TMR0IE = 1;      //tmr0 interrupt on
     T2CONbits.TMR2ON = 1;       //tmr2 on
-    /*PWM3CONbits.PWM3EN = 1;*/
 }
 
 void enable_ext_interrupts(void)
@@ -151,12 +150,12 @@ void interrupt ISR(void)
 
         // control pwm here
         if(LED_ON){
-            LATAbits.LATA2 = 1;
-            //PWM3CONbits.PWM3OE = 1;     //output enable
+            //LATAbits.LATA2 = 1;
+            TRISAbits.TRISA2 = 0;       // pwm output enable
         }
         else{
-            LATAbits.LATA2 = 0;
-            //PWM3CONbits.PWM3OE = 0;     //output disable
+            //LATAbits.LATA2 = 0;
+            TRISAbits.TRISA2 = 1;       // pwm output disable
         }
 
         // run mode managed here (every 10ms)
