@@ -33,6 +33,16 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+//config main clock
+void config_clock(void)
+{
+    // set high speed internal oscillator @ 16MHz
+    OSCCONbits.IRCF = 0b1111;
+
+    // wait for osc. to be ready to use
+    while(!OSCSTATbits.HFIOFR);
+}
+
 //config port pins
 void config_port(void)
 {
@@ -40,31 +50,19 @@ void config_port(void)
     PORTA = 0;
     LATA = 0;
     ANSELA = 0;
-    TRISA = 0b11111111;     // A5, input
-/*
-    // portc
-    PORTC = 0;
-    LATC = 0;
-    TRISC = 0b11111000;     // C0, C1, C2, output*/
+    TRISA = 0b11111011;     // A5 input, A2 output
 }
 
 //config timer
 void config_timer(void)
-{/*
+{
     // setup timer0
     TMR0 = 0;
     OPTION_REGbits.TMR0CS = 0;
     OPTION_REGbits.PSA = 1;
     //OPTION_REGbits.PS = 0b111;  // 1:256 scale
     // we want to overflow after 250 instruction cycles to make math nicer
-    TMR0bits.TMR0 = 5;*/
-
-    /*// setup timer1
-    TMR1 = 0;
-    T1CONbits.TMR1CS = 0b01;    // fosc source
-    T1CONbits.TMR1ON = 1;
-    TMR1Hbits.TMR1H = 0xFF;     // load for 100kHz operation @ fosc = 16MHz
-    TMR1Lbits.TMR1L = 0x5F;*/
+    TMR0bits.TMR0 = 5;
 }
 
 //config pwm
@@ -81,51 +79,33 @@ void config_pwm(void)
     PWM3DCHbits.PWM3DCH = 0b00010100;    //load duty cycle of 80/(4*(pr2+1)) = 0.5, 50%
     PWM3DCLbits.PWM3DCL = 0;
     PWM3CONbits.PWM3EN = 1;     //turn it on
-    PWM3CONbits.PWM3OE = 1;     //output enable
-
-    // pwm4 on C1
-    PWM4CONbits.PWM4POL = 0;    //active high
-    PWM4DCHbits.PWM4DCH = 0b00000100;    //load duty cycle of 16/(4*(pr2+1)) = 0.1, 10%
-    PWM4DCHbits.PWM4DCH = 0b00010100;    //load duty cycle of 80/(4*(pr2+1)) = 0.5, 50%
-    PWM4DCLbits.PWM4DCL = 0;
-    PWM4CONbits.PWM4EN = 1;     //turn it on
-    PWM4CONbits.PWM4OE = 1;     //output enable*/
+    PWM3CONbits.PWM3OE = 1;     //output enable*/
 }
 
 //config interrupts
 void config_interrupts(void)
-{/*
-    // enable timer interrupts
+{
+    // clear and get ready for tmr0 interrupt
     INTCONbits.TMR0IF = 0;
-    INTCONbits.TMR0IE = 1;
-    /*PIR1bits.TMR1IF = 0;
-    PIE1bits.TMR1IE = 1;*/
     INTCONbits.GIE = 1;
-    //INTCONbits.PEIE = 1;
+    INTCONbits.PEIE = 1;
 }
 
 void sleepy(void)
-{/*
-    //INTCONbits.PEIE = 0;
-    //PIE1bits.TMR1IE = 0;
-    //T1CONbits.TMR1ON = 0;
+{
+    INTCONbits.TMR0IF = 0;
     INTCONbits.TMR0IE = 0;
-    PWM3CONbits.PWM3OE = 0;     //output disable
-    PWM3CONbits.PWM3EN = 0;
-    PWM4CONbits.PWM4OE = 0;     //output disable
-    PWM4CONbits.PWM4EN = 0;
-    T2CONbits.TMR2ON = 0;       //tmr2 off*/
+    /*PWM3CONbits.PWM3OE = 0;     //output disable
+    PWM3CONbits.PWM3EN = 0;*/
+    T2CONbits.TMR2ON = 0;       //tmr2 off
     LATAbits.LATA5 = 0;
 }
 
 void wakey(void)
-{/*
-    //PIE1bits.TMR1IE = 1;
-    //T1CONbits.TMR1ON = 1;
-    INTCONbits.TMR0IE = 1;
+{
+    INTCONbits.TMR0IE = 1;      //tmr0 interrupt on
     T2CONbits.TMR2ON = 1;       //tmr2 on
-    PWM3CONbits.PWM3EN = 1;
-    PWM4CONbits.PWM4EN = 1;*/
+    /*PWM3CONbits.PWM3EN = 1;*/
 }
 
 void enable_ext_interrupts(void)
@@ -162,23 +142,8 @@ void interrupt ISR(void)
         wakeUp = 500;
         wakey();
     }
-
-    while(1);
-
-//    if(PIR1bits.TMR1IF){
-//        PIR1bits.TMR1IF = 0;
-//        TMR1Hbits.TMR1H = 0xFF;     // load for 100kHz operation @ fosc = 16MHz
-//        TMR1Lbits.TMR1L = 0x5F;
-//
-//        if(LED_ON){
-//            LATAbits.LATA2 = 1;//!PORTAbits.RA2;
-//        }
-//        else{
-//            LATAbits.LATA2 = 0;
-//        }
-//    }
     
-    /*if(INTCONbits.TMR0IF){
+    if(INTCONbits.TMR0IF){
         INTCONbits.TMR0IF = 0;
 
         // we want to overflow after 250 instruction cycles to make math nicer
@@ -186,12 +151,12 @@ void interrupt ISR(void)
 
         // control pwm here
         if(LED_ON){
-            PWM3CONbits.PWM3OE = 1;     //output enable
-            PWM4CONbits.PWM4OE = 1;
+            LATAbits.LATA2 = 1;
+            //PWM3CONbits.PWM3OE = 1;     //output enable
         }
         else{
-            PWM3CONbits.PWM3OE = 0;     //output disable
-            PWM4CONbits.PWM4OE = 0;
+            LATAbits.LATA2 = 0;
+            //PWM3CONbits.PWM3OE = 0;     //output disable
         }
 
         // run mode managed here (every 10ms)
@@ -235,20 +200,16 @@ void interrupt ISR(void)
                     break;
             }
         }
-    }*/
+    }
 }
 
 void main(int argc, char** argv) {
     // init
+    config_clock();
     config_port();
     config_timer();
     config_interrupts();
     config_pwm();
-
-    enable_ext_interrupts();
-    sleepy();
-
-    while(1);
 
     while(1){
         // sleep when led is off, until ext interrupt wakes us up
