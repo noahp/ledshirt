@@ -73,7 +73,7 @@ void config_pwm(void)
 {
     // tmr2 config
     T2CONbits.T2CKPS = 0b00;    //prescale is 1
-    PR2bits.PR2 = 39;           //39+1 for 100kHz operation
+    PR2bits.PR2 = 19;           //19+1 for 50kHz operation
     T2CONbits.TMR2ON = 1;       //tmr2 on
 
     // pwm1A on A2
