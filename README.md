@@ -21,8 +21,7 @@ http://www.cree.com/~/media/Files/Cree/LED%20Components%20and%20Modules/HB/Data%
 
 FET
 -----
-Dual N-Channel-
-http://www.mouser.com/ProductDetail/Diodes-Incorporated/DMG9926UDM-7
+P-N SOT23-6 http://www.digikey.com/product-detail/en/DMC2038LVT-7/DMC2038LVT-7DICT-ND/2756074
 
 Previous Mouser cart
 -----
