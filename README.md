@@ -21,9 +21,5 @@ http://www.cree.com/~/media/Files/Cree/LED%20Components%20and%20Modules/HB/Data%
 
 FET
 -----
-P-N SOT23-6 http://www.digikey.com/product-detail/en/DMC2038LVT-7/DMC2038LVT-7DICT-ND/2756074
-
-Previous Mouser cart
------
-http://www.mouser.com/ProjectManager/ProjectDetail.aspx?AccessID=94f117391b  
-(note- has wrong package of PIC, TSSOP-14 instead of SOIC-14)
+P-N SOT23-6  
+http://www.digikey.com/product-detail/en/DMC2038LVT-7/DMC2038LVT-7DICT-ND/2756074
