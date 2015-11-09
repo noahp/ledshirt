@@ -9,6 +9,11 @@ Charger
 http://ww1.microchip.com/downloads/en/DeviceDoc/21984e.pdf  
 http://www.microchip.com/wwwproducts/Devices.aspx?dDocName=en024903
 
+12v Boost
+-----
+http://www.digikey.com/product-detail/en/AP3012KTR-G1/AP3012KTR-G1DICT-ND/4505297  
+http://www.diodes.com/catalog/Boost_Converter_44/AP3012_9395
+
 Micro
 -----
 pic12f1822 [Microchip product page](http://www.microchip.com/wwwproducts/Devices.aspx?dDocName=en544839)  
