@@ -14,6 +14,10 @@ http://www.microchip.com/wwwproducts/Devices.aspx?dDocName=en024903
 http://www.digikey.com/product-detail/en/AP3012KTR-G1/AP3012KTR-G1DICT-ND/4505297  
 http://www.diodes.com/catalog/Boost_Converter_44/AP3012_9395
 
+Diode
+-----
+http://www.mouser.com/Search/ProductDetail.aspx?qs=NQ47qNm99eDyWTEd07miYA%3d%3d
+
 Micro
 -----
 pic12f1822 [Microchip product page](http://www.microchip.com/wwwproducts/Devices.aspx?dDocName=en544839)  
