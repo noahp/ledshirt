@@ -25,8 +25,10 @@ http://www.digikey.com/product-search/en?keywords=PIC12F1822-I%2FSN
 
 LEDs
 -----
+Original cree bare emitters-  
 http://www.digikey.com/product-detail/en/CLM1B-GKW-CVAXA7A3/CLM1B-GKW-CVAXA7A3CT-ND/3659979  
-http://www.cree.com/~/media/Files/Cree/LED%20Components%20and%20Modules/HB/Data%20Sheets/CLM1BBKWGKW994.pdf  
+New flexible waterproof strip-  
+http://www.ebay.com/itm/321843596089?_trksid=p2060353.m2749.l2649&ssPageName=STRK%3AMEBIDX%3AIT
 
 FET
 -----
