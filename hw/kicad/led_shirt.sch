@@ -1,5 +1,4 @@
 EESchema Schematic File Version 2
-LIBS:led_shirt-rescue
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -47,19 +46,19 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text GLabel 8300 3100 0    60   Input ~ 0
+Text Label 8300 3100 2    60   ~ 0
 vbat
-Text GLabel 4750 2100 0    60   Input ~ 0
+Text Label 5300 3000 0    60   ~ 0
 vbat
 $Comp
 L R-RESCUE-led_shirt R1
 U 1 1 509FF0CA
-P 4850 2450
-F 0 "R1" V 4930 2450 50  0000 C CNN
-F 1 "10kΩ" V 4850 2450 50  0000 C CNN
-F 2 "kicadlib:SMD_0603_R" H 4850 2450 60  0001 C CNN
-F 3 "" H 4850 2450 60  0001 C CNN
-	1    4850 2450
+P 5200 3350
+F 0 "R1" V 5280 3350 50  0000 C CNN
+F 1 "10kΩ" V 5200 3350 50  0000 C CNN
+F 2 "kicadlib:SMD_0603_R" H 5200 3350 60  0001 C CNN
+F 3 "" H 5200 3350 60  0001 C CNN
+	1    5200 3350
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -73,7 +72,7 @@ F 3 "" H 8400 4100 60  0001 C CNN
 	1    8400 4100
 	1    0    0    -1  
 $EndComp
-Text GLabel 5700 4000 0    60   Input ~ 0
+Text Label 5700 4000 2    60   ~ 0
 mclr
 $Comp
 L GND-RESCUE-led_shirt #PWR01
@@ -86,7 +85,7 @@ F 3 "" H 3250 1650 60  0001 C CNN
 	1    3250 1650
 	1    0    0    -1  
 $EndComp
-Text GLabel 3100 1600 0    60   Input ~ 0
+Text Label 3100 1600 2    60   ~ 0
 vbat
 $Comp
 L TST P2
@@ -121,9 +120,9 @@ F 3 "" H 7250 3450 60  0001 C CNN
 	1    7250 3450
 	1    0    0    -1  
 $EndComp
-Text GLabel 8600 1950 2    60   Input ~ 0
+Text Label 8600 1950 0    60   ~ 0
 vbat
-Text GLabel 4150 6150 2    60   Input ~ 0
+Text Label 4150 6150 0    60   ~ 0
 vbat
 $Comp
 L GND-RESCUE-led_shirt #PWR03
@@ -202,7 +201,7 @@ F 3 "" H 1250 6750 60  0001 C CNN
 	1    1250 6750
 	1    0    0    -1  
 $EndComp
-Text GLabel 1150 6150 0    60   Input ~ 0
+Text Label 1150 6150 2    60   ~ 0
 vbus
 $Comp
 L GND-RESCUE-led_shirt #PWR05
@@ -215,7 +214,7 @@ F 3 "" H 1800 1850 60  0001 C CNN
 	1    1800 1850
 	1    0    0    -1  
 $EndComp
-Text GLabel 1800 1250 2    60   Input ~ 0
+Text Label 1800 1250 0    60   ~ 0
 vbus
 $Comp
 L 10103593-0001LF J1
@@ -261,7 +260,7 @@ F 3 "~" H 5750 4350 30  0000 C CNN
 	1    5750 4350
 	1    0    0    -1  
 $EndComp
-Text GLabel 5750 4750 0    60   Input ~ 0
+Text Label 5750 4750 0    60   ~ 0
 vbat
 $Comp
 L R-RESCUE-led_shirt R4
@@ -379,8 +378,6 @@ Wire Wire Line
 	3300 6900 3850 6900
 Connection ~ 3700 6900
 Wire Wire Line
-	5250 3550 5800 3550
-Wire Wire Line
 	3100 1450 3100 1600
 Wire Wire Line
 	3250 1450 3250 1650
@@ -409,54 +406,33 @@ NoConn ~ 5800 3850
 $Comp
 L SW_PUSH SW1
 U 1 1 509ED3DD
-P 4450 2850
-F 0 "SW1" H 4600 2960 50  0000 C CNN
-F 1 "SW_PUSH" H 4450 2770 50  0000 C CNN
-F 2 "noah:SW_PB_4PIN_SMT_real" H 4450 2850 60  0001 C CNN
-F 3 "" H 4450 2850 60  0001 C CNN
-	1    4450 2850
-	1    0    0    -1  
+P 5200 4100
+F 0 "SW1" H 5350 4210 50  0000 C CNN
+F 1 "SW_PUSH" H 5200 4020 50  0000 C CNN
+F 2 "noah:SW_PB_4PIN_SMT_real" H 5200 4100 60  0001 C CNN
+F 3 "" H 5200 4100 60  0001 C CNN
+	1    5200 4100
+	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	4750 2850 4950 2850
 $Comp
 L GND-RESCUE-led_shirt #PWR06
 U 1 1 56338053
-P 4000 2950
-F 0 "#PWR06" H 4000 2950 30  0001 C CNN
-F 1 "GND" H 4000 2880 30  0001 C CNN
-F 2 "" H 4000 2950 60  0001 C CNN
-F 3 "" H 4000 2950 60  0001 C CNN
-	1    4000 2950
+P 5200 4500
+F 0 "#PWR06" H 5200 4500 30  0001 C CNN
+F 1 "GND" H 5200 4430 30  0001 C CNN
+F 2 "" H 5200 4500 60  0001 C CNN
+F 3 "" H 5200 4500 60  0001 C CNN
+	1    5200 4500
 	1    0    0    -1  
 $EndComp
-Connection ~ 4850 2850
-Wire Wire Line
-	4000 2850 4150 2850
-Wire Wire Line
-	5250 3050 5250 3550
-Wire Wire Line
-	4850 3700 5800 3700
-Text GLabel 1800 1450 2    60   Input ~ 0
-mclr
-Text GLabel 7100 3700 2    60   Input ~ 0
+Text Label 7100 3700 0    60   ~ 0
 icspdat
-Text GLabel 7100 3850 2    60   Input ~ 0
+Text Label 7100 3850 0    60   ~ 0
 icspclk
 Wire Wire Line
 	7100 3700 7000 3700
 Wire Wire Line
 	7100 3850 7000 3850
-Text GLabel 2050 1350 2    60   Input ~ 0
-icspdat
-Text GLabel 2050 1550 2    60   Input ~ 0
-icspclk
-Wire Wire Line
-	2050 1350 1650 1350
-Wire Wire Line
-	1800 1450 1650 1450
-Wire Wire Line
-	1650 1550 2050 1550
 $Comp
 L PN_MOSFET_DUAL Q1
 U 1 1 5633D4EA
@@ -468,21 +444,21 @@ F 3 "" H 7800 1500 60  0000 C CNN
 	1    7850 1500
 	1    0    0    -1  
 $EndComp
-Text GLabel 7200 4000 2    60   Input ~ 0
+Text Label 7200 4000 0    60   ~ 0
 Q1_G
-Text GLabel 8400 4500 0    60   Input ~ 0
+Text Label 8400 4500 0    60   ~ 0
 Q1_D
-Text GLabel 4950 2850 2    60   Input ~ 0
+Text Label 5100 3700 2    60   ~ 0
 Q2_G
-Text GLabel 5250 3050 2    60   Input ~ 0
+Text Label 5700 3550 2    60   ~ 0
 Q2_S
-Text GLabel 8600 1050 2    60   Input ~ 0
+Text Label 8600 1050 0    60   ~ 0
 Q1_D
-Text GLabel 7100 1050 0    60   Input ~ 0
+Text Label 7100 1050 2    60   ~ 0
 Q1_G
-Text GLabel 7100 1950 0    60   Input ~ 0
+Text Label 7100 1950 2    60   ~ 0
 Q2_G
-Text GLabel 7100 1500 0    60   Input ~ 0
+Text Label 7100 1500 2    60   ~ 0
 Q2_S
 Wire Wire Line
 	7100 1050 7200 1050
@@ -497,13 +473,7 @@ Wire Wire Line
 Wire Wire Line
 	8500 1950 8600 1950
 Wire Wire Line
-	4000 2950 4000 2850
-Wire Wire Line
-	4750 2100 4850 2100
-Wire Wire Line
-	4850 2100 4850 2200
-Wire Wire Line
-	4850 2700 4850 3700
+	5200 3000 5200 3100
 $Comp
 L GND-RESCUE-led_shirt #PWR07
 U 1 1 5638CC8A
@@ -535,4 +505,18 @@ Wire Wire Line
 Wire Wire Line
 	7000 4000 7200 4000
 Connection ~ 7100 4000
+NoConn ~ 1650 1350
+NoConn ~ 1650 1450
+NoConn ~ 1650 1550
+Wire Wire Line
+	5300 3000 5200 3000
+Wire Wire Line
+	5700 3550 5800 3550
+Wire Wire Line
+	5100 3700 5800 3700
+Wire Wire Line
+	5200 4500 5200 4400
+Wire Wire Line
+	5200 3600 5200 3800
+Connection ~ 5200 3700
 $EndSCHEMATC
