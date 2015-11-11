@@ -1,4 +1,4 @@
-update=11/10/2015 8:44:41 AM
+update=11/11/2015 9:37:23 AM
 version=1
 last_client=kicad
 [general]
@@ -74,6 +74,5 @@ LibName26=opto
 LibName27=atmel
 LibName28=contrib
 LibName29=valves
-LibName30=noah
-LibName31=extra
-LibName32=kicadlib/kicadlib
+LibName30=extra
+LibName31=kicadlib/kicadlib
