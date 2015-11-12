@@ -42,3 +42,7 @@ http://www.digikey.com/product-detail/en/DMC2038LVT-7/DMC2038LVT-7DICT-ND/275607
 Pushbutton
 -----
 http://www.digikey.com/product-detail/en/PTS645SK50SMTR92%20LFS/CKN9087CT-ND/1146813
+
+USB Micro B
+-----
+http://www.mouser.com/ProductDetail/FCI/10118192-0001LF
