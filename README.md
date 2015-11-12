@@ -18,6 +18,10 @@ Diode
 -----
 http://www.mouser.com/Search/ProductDetail.aspx?qs=NQ47qNm99eDyWTEd07miYA%3d%3d
 
+Inductor
+-----
+http://www.digikey.com/product-detail/en/SRR6038-100Y/SRR6038-100YCT-ND/2127571
+
 Micro
 -----
 pic12f1822 [Microchip product page](http://www.microchip.com/wwwproducts/Devices.aspx?dDocName=en544839)  
