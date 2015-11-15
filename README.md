@@ -46,3 +46,8 @@ http://www.digikey.com/product-detail/en/PTS645SK50SMTR92%20LFS/CKN9087CT-ND/114
 USB Micro B
 -----
 http://www.mouser.com/ProductDetail/FCI/10118192-0001LF
+
+Enclosure
+-----
+http://www.mouser.com/ProductDetail/Bud-Industries/HH-3490  
+http://www.mouser.com/ProductDetail/New-Age-Enclosures/S3A-202010
