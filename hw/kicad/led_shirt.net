@@ -1,7 +1,7 @@
 (export (version D)
   (design
-    (source C:\dev\ledshirt\hw\kicad\led_shirt.sch)
-    (date "11/12/2015 6:07:09 PM")
+    (source C:/dev/ledshirt/hw/kicad/led_shirt.sch)
+    (date "11/18/2015 9:25:12 PM")
     (tool "Eeschema 4.0.0-rc1-stable")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -137,7 +137,7 @@
       (tstamp 564232A8))
     (comp (ref J2)
       (value 2_PIN_HDR)
-      (footprint kicadlib:SMD_JST_2_PIN_VERT)
+      (footprint kicadlib:TH_JST_2PIN_RIGHTANGLE)
       (libsource (lib kicadlib) (part 2_PIN_HDR))
       (sheetpath (names /) (tstamps /))
       (tstamp 56423C78))
@@ -161,7 +161,7 @@
       (tstamp 56424638))
     (comp (ref J3)
       (value 2_PIN_HDR)
-      (footprint kicadlib:SMD_JST_2_PIN_VERT)
+      (footprint kicadlib:TH_JST_2PIN_RIGHTANGLE)
       (libsource (lib kicadlib) (part 2_PIN_HDR))
       (sheetpath (names /) (tstamps /))
       (tstamp 56426881))
@@ -172,6 +172,21 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 564507C5)))
   (libparts
+    (libpart (lib device) (part INDUCTOR)
+      (fields
+        (field (name Reference) L)
+        (field (name Value) INDUCTOR))
+      (pins
+        (pin (num 1) (name 1) (type passive))
+        (pin (num 2) (name 2) (type passive))))
+    (libpart (lib device) (part SW_PUSH)
+      (description Button)
+      (fields
+        (field (name Reference) SW)
+        (field (name Value) SW_PUSH))
+      (pins
+        (pin (num 1) (name 1) (type passive))
+        (pin (num 2) (name 2) (type passive))))
     (libpart (lib device) (part CP1)
       (description "Polarised capacitor")
       (footprints
@@ -201,21 +216,6 @@
       (pins
         (pin (num 1) (name K) (type passive))
         (pin (num 2) (name A) (type passive))))
-    (libpart (lib device) (part INDUCTOR)
-      (fields
-        (field (name Reference) L)
-        (field (name Value) INDUCTOR))
-      (pins
-        (pin (num 1) (name 1) (type passive))
-        (pin (num 2) (name 2) (type passive))))
-    (libpart (lib device) (part SW_PUSH)
-      (description Button)
-      (fields
-        (field (name Reference) SW)
-        (field (name Value) SW_PUSH))
-      (pins
-        (pin (num 1) (name 1) (type passive))
-        (pin (num 2) (name 2) (type passive))))
     (libpart (lib extra) (part 10103593-0001LF)
       (fields
         (field (name Reference) J)
@@ -328,12 +328,12 @@
         (pin (num 1) (name ~) (type passive))
         (pin (num 2) (name ~) (type passive)))))
   (libraries
+    (library (logical extra)
+      (uri C:\dev\ledshirt\hw\kicad\extra.lib))
+    (library (logical kicadlib)
+      (uri C:\dev\ledshirt\hw\kicad\kicadlib\kicadlib.lib))
     (library (logical device)
       (uri "C:\\Program Files\\KiCad\\share\\kicad\\library\\device.lib"))
-    (library (logical extra)
-      (uri extra.lib))
-    (library (logical kicadlib)
-      (uri kicadlib\kicadlib.lib))
     (library (logical led_shirt-cache)
       (uri C:\dev\ledshirt\hw\kicad\led_shirt-cache.lib)))
   (nets
