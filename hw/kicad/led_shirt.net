@@ -1,8 +1,8 @@
 (export (version D)
   (design
-    (source C:/dev/ledshirt/hw/kicad/led_shirt.sch)
-    (date "11/18/2015 9:25:12 PM")
-    (tool "Eeschema 4.0.0-rc1-stable")
+    (source C:/Users/npendlet/Desktop/misc/temp/ledshirt/hw/kicad/led_shirt.sch)
+    (date "11/20/2015 8:49:21 AM")
+    (tool "Eeschema 4.0.0-rc2-stable")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
         (title)
@@ -142,7 +142,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 56423C78))
     (comp (ref R1)
-      (value 10kΩ)
+      (value 82kΩ)
       (footprint kicadlib:SMD_0603_R)
       (libsource (lib led_shirt-cache) (part R-RESCUE-led_shirt))
       (sheetpath (names /) (tstamps /))
@@ -172,50 +172,6 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 564507C5)))
   (libparts
-    (libpart (lib device) (part INDUCTOR)
-      (fields
-        (field (name Reference) L)
-        (field (name Value) INDUCTOR))
-      (pins
-        (pin (num 1) (name 1) (type passive))
-        (pin (num 2) (name 2) (type passive))))
-    (libpart (lib device) (part SW_PUSH)
-      (description Button)
-      (fields
-        (field (name Reference) SW)
-        (field (name Value) SW_PUSH))
-      (pins
-        (pin (num 1) (name 1) (type passive))
-        (pin (num 2) (name 2) (type passive))))
-    (libpart (lib device) (part CP1)
-      (description "Polarised capacitor")
-      (footprints
-        (fp SMD*_Pol)
-        (fp c_elec*)
-        (fp C*elec)
-        (fp TantalC*)
-        (fp Elko*)
-        (fp CP*))
-      (fields
-        (field (name Reference) C)
-        (field (name Value) CP1))
-      (pins
-        (pin (num 1) (name ~) (type passive))
-        (pin (num 2) (name ~) (type passive))))
-    (libpart (lib device) (part D_Schottky)
-      (description "Diode schottky")
-      (footprints
-        (fp D-Pak_TO252AA)
-        (fp Diode_*)
-        (fp *SingleDiode)
-        (fp *SingleDiode*)
-        (fp *_Diode_*))
-      (fields
-        (field (name Reference) D)
-        (field (name Value) D_Schottky))
-      (pins
-        (pin (num 1) (name K) (type passive))
-        (pin (num 2) (name A) (type passive))))
     (libpart (lib extra) (part 10103593-0001LF)
       (fields
         (field (name Reference) J)
@@ -254,27 +210,6 @@
         (pin (num 3) (name FB) (type input))
         (pin (num 4) (name ~SHDN) (type input))
         (pin (num 5) (name VIN) (type input))))
-    (libpart (lib kicadlib) (part MCP73831)
-      (fields
-        (field (name Reference) U)
-        (field (name Value) MCP73831))
-      (pins
-        (pin (num 1) (name stat) (type input))
-        (pin (num 2) (name vss) (type input))
-        (pin (num 3) (name vbat) (type input))
-        (pin (num 4) (name vdd) (type input))
-        (pin (num 5) (name prog) (type input))))
-    (libpart (lib kicadlib) (part PN_MOSFET_DUAL)
-      (fields
-        (field (name Reference) Q)
-        (field (name Value) PN_MOSFET_DUAL))
-      (pins
-        (pin (num 1) (name G1) (type input))
-        (pin (num 2) (name S2) (type input))
-        (pin (num 3) (name G2) (type input))
-        (pin (num 4) (name D2) (type input))
-        (pin (num 5) (name S1) (type input))
-        (pin (num 6) (name D1) (type input))))
     (libpart (lib led_shirt-cache) (part C-RESCUE-led_shirt)
       (footprints
         (fp SM*)
@@ -286,6 +221,42 @@
       (pins
         (pin (num 1) (name ~) (type passive))
         (pin (num 2) (name ~) (type passive))))
+    (libpart (lib device) (part CP1)
+      (description "Polarised capacitor")
+      (footprints
+        (fp SMD*_Pol)
+        (fp c_elec*)
+        (fp C*elec)
+        (fp TantalC*)
+        (fp Elko*)
+        (fp CP*))
+      (fields
+        (field (name Reference) C)
+        (field (name Value) CP1))
+      (pins
+        (pin (num 1) (name ~) (type passive))
+        (pin (num 2) (name ~) (type passive))))
+    (libpart (lib device) (part D_Schottky)
+      (description "Diode schottky")
+      (footprints
+        (fp D-Pak_TO252AA)
+        (fp Diode_*)
+        (fp *SingleDiode)
+        (fp *SingleDiode*)
+        (fp *_Diode_*))
+      (fields
+        (field (name Reference) D)
+        (field (name Value) D_Schottky))
+      (pins
+        (pin (num 1) (name K) (type passive))
+        (pin (num 2) (name A) (type passive))))
+    (libpart (lib device) (part INDUCTOR)
+      (fields
+        (field (name Reference) L)
+        (field (name Value) INDUCTOR))
+      (pins
+        (pin (num 1) (name 1) (type passive))
+        (pin (num 2) (name 2) (type passive))))
     (libpart (lib led_shirt-cache) (part LED-RESCUE-led_shirt)
       (footprints
         (fp LED-3MM)
@@ -301,6 +272,16 @@
       (pins
         (pin (num 1) (name A) (type passive))
         (pin (num 2) (name K) (type passive))))
+    (libpart (lib kicadlib) (part MCP73831)
+      (fields
+        (field (name Reference) U)
+        (field (name Value) MCP73831))
+      (pins
+        (pin (num 1) (name stat) (type input))
+        (pin (num 2) (name vss) (type input))
+        (pin (num 3) (name vbat) (type input))
+        (pin (num 4) (name vdd) (type input))
+        (pin (num 5) (name prog) (type input))))
     (libpart (lib led_shirt-cache) (part PIC12F1822)
       (fields
         (field (name Reference) U)
@@ -314,6 +295,17 @@
         (pin (num 6) (name RA1) (type input))
         (pin (num 7) (name RA0) (type input))
         (pin (num 8) (name VSS) (type input))))
+    (libpart (lib kicadlib) (part PN_MOSFET_DUAL)
+      (fields
+        (field (name Reference) Q)
+        (field (name Value) PN_MOSFET_DUAL))
+      (pins
+        (pin (num 1) (name G1) (type input))
+        (pin (num 2) (name S2) (type input))
+        (pin (num 3) (name G2) (type input))
+        (pin (num 4) (name D2) (type input))
+        (pin (num 5) (name S1) (type input))
+        (pin (num 6) (name D1) (type input))))
     (libpart (lib led_shirt-cache) (part R-RESCUE-led_shirt)
       (footprints
         (fp R?)
@@ -326,16 +318,24 @@
         (field (name Value) R-RESCUE-led_shirt))
       (pins
         (pin (num 1) (name ~) (type passive))
-        (pin (num 2) (name ~) (type passive)))))
+        (pin (num 2) (name ~) (type passive))))
+    (libpart (lib device) (part SW_PUSH)
+      (description Button)
+      (fields
+        (field (name Reference) SW)
+        (field (name Value) SW_PUSH))
+      (pins
+        (pin (num 1) (name 1) (type passive))
+        (pin (num 2) (name 2) (type passive)))))
   (libraries
-    (library (logical extra)
-      (uri C:\dev\ledshirt\hw\kicad\extra.lib))
-    (library (logical kicadlib)
-      (uri C:\dev\ledshirt\hw\kicad\kicadlib\kicadlib.lib))
     (library (logical device)
       (uri "C:\\Program Files\\KiCad\\share\\kicad\\library\\device.lib"))
+    (library (logical extra)
+      (uri C:\Users\npendlet\Desktop\misc\temp\ledshirt\hw\kicad\extra.lib))
+    (library (logical kicadlib)
+      (uri C:\Users\npendlet\Desktop\misc\temp\ledshirt\hw\kicad\kicadlib\kicadlib.lib))
     (library (logical led_shirt-cache)
-      (uri C:\dev\ledshirt\hw\kicad\led_shirt-cache.lib)))
+      (uri C:\Users\npendlet\Desktop\misc\temp\ledshirt\hw\kicad\led_shirt-cache.lib)))
   (nets
     (net (code 1) (name "Net-(D2-Pad2)")
       (node (ref R10) (pin 1))

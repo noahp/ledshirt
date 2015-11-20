@@ -463,7 +463,7 @@ L R-RESCUE-led_shirt R1
 U 1 1 5642454D
 P 5750 1650
 F 0 "R1" V 5830 1650 50  0000 C CNN
-F 1 "10kΩ" V 5750 1650 50  0000 C CNN
+F 1 "82kΩ" V 5750 1650 50  0000 C CNN
 F 2 "kicadlib:SMD_0603_R" H 5750 1650 60  0001 C CNN
 F 3 "" H 5750 1650 60  0001 C CNN
 	1    5750 1650
@@ -752,4 +752,6 @@ Wire Notes Line
 	5200 1450 4750 1450
 Text Notes 4100 1950 0    60   ~ 0
 *nopop-\nextra holdup\non +12V
+Text Notes 5900 2600 0    60   ~ 0
+Vout = 1.25V * (1 + R1/R2)\nUse 82k/10k -> 11.5V, or 10.5V<->12.5V WCA
 $EndSCHEMATC
