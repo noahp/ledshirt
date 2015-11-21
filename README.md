@@ -1,11 +1,12 @@
-Ledshirt Readme
-=====
+# Ledshirt Readme
 Simple lipo charger + blinker for string of LEDs.
 
-Parts
-=====
-Charger
------
+# 3d Renders
+<img src="https://raw.githubusercontent.com/noahp/ledshirt/master/hw/kicad/3d_render_top.png" width="300">
+<img src="https://raw.githubusercontent.com/noahp/ledshirt/master/hw/kicad/3d_render_iso.png" width="250">
+
+# Parts
+## Charger
 http://ww1.microchip.com/downloads/en/DeviceDoc/21984e.pdf  
 http://www.microchip.com/wwwproducts/Devices.aspx?dDocName=en024903
 
