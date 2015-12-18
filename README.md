@@ -2,7 +2,7 @@
 Battery powered LED flasher.
 
 # Block Diagram
-<img src="https://raw.githubusercontent.com/noahp/ledshirt/master/hw/led_shirt_blockdiagram.svg" width="300">
+<img src="https://raw.githubusercontent.com/noahp/ledshirt/master/hw/led_shirt_blockdiagram.png" width="600">
 
 # 3d Renders
 <img src="https://raw.githubusercontent.com/noahp/ledshirt/master/hw/kicad/3d_render_top.png" width="300">
