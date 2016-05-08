@@ -53,7 +53,7 @@ void config_port(void)
     TRISA = 0b11111011;     // A5 input, A2 output
 
     // pwm P1A on pin A2
-    APFCONbits.CCP1SEL = 0;
+    //APFCONbits.CCP1SEL = 0;
 }
 
 //config timer
@@ -90,6 +90,9 @@ void config_interrupts(void)
     INTCONbits.TMR0IF = 0;
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
+    
+    
+    INTCONbits.TMR0IE = 1;      //tmr0 interrupt on
 }
 
 void sleepy(void)
@@ -124,9 +127,9 @@ void disable_ext_interrupts(void)
 }
 
 #define NUM_MODES 3
-unsigned int blinkMode = 0;
+unsigned int blinkMode = 1; // on reset, blink is active
 unsigned int wakeUp = 0;
-char LED_ON = 0;
+char LED_ON = 1;
 
 void interrupt ISR(void)
 {
@@ -151,11 +154,17 @@ void interrupt ISR(void)
         // control pwm here
         if(LED_ON){
             //LATAbits.LATA2 = 1;
-            TRISAbits.TRISA2 = 0;       // pwm output enable
+            //TRISAbits.TRISA2 = 0;       // pwm output enable
+            // set output high
+            PORTAbits.RA2 = 1;
+            LATAbits.LATA2 = 1;
         }
         else{
             //LATAbits.LATA2 = 0;
-            TRISAbits.TRISA2 = 1;       // pwm output disable
+            //TRISAbits.TRISA2 = 1;       // pwm output disable
+            // set output low too
+            PORTAbits.RA2 = 0;
+            LATAbits.LATA2 = 0;
         }
 
         // run mode managed here (every 10ms)
@@ -168,7 +177,7 @@ void interrupt ISR(void)
             }
 
             // run button check here
-            if(!PORTAbits.RA5){
+            if(0){//!PORTAbits.RA5){
                 if(buttonPress++ > 30){
                     buttonPress = 0;
                     blinkMode = (blinkMode + 1)%NUM_MODES;
@@ -185,7 +194,7 @@ void interrupt ISR(void)
                     LED_ON = 0;
                     break;
                 case 1:
-                    if(blinkStage < 5){
+                    if(blinkStage < 3){
                         LED_ON = 1;
                     }
                     else{
@@ -206,9 +215,14 @@ void main(int argc, char** argv) {
     // init
     config_clock();
     config_port();
+    
+    // below is probably redundant
+    PORTAbits.RA2 = 1;
+    LATAbits.LATA2 = 1;
+            
     config_timer();
     config_interrupts();
-    config_pwm();
+    //config_pwm();
 
     while(1){
         // sleep when led is off, until ext interrupt wakes us up
